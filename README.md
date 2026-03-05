@@ -3,7 +3,7 @@
 Modern dark-themed portfolio showcasing vanilla JS projects.
 
 ## Live Demo
-https://your-app-name.onrender.com/  (update after deploying)
+https://akelecoder.netlify.app  (update after deploying)
 
 ## Features
 - Responsive design
@@ -18,7 +18,7 @@ https://your-app-name.onrender.com/  (update after deploying)
 1. Clone: `git clone https://github.com/macbanglomirai2025/portfolio.git`
 2. Open `index.html` in browser
 
-## Deployed on Render.com
+## Deployed on Netlify
 Static site – auto-deploys on push to main.
 
 Made with ❤️ in Chhattisgarh
