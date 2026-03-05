@@ -1,19 +1,74 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-<title>Tic Tac Toe</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tic Tac Toe | Akele Coder</title>
+  <link rel="stylesheet" href="../../css/style.css" />
+  <style>
+    /* Page-specific styles */
+    main {
+      max-width: 600px;
+      margin: 60px auto;
+      text-align: center;
+    }
+    h1 {
+      margin-bottom: 20px;
+    }
+    #status {
+      font-size: 1.4rem;
+      margin: 20px 0;
+      min-height: 1.6em;
+    }
+    .board {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      max-width: 420px;
+      margin: 0 auto 30px;
+    }
+    .cell {
+      aspect-ratio: 1 / 1;
+      background: #1e293b;
+      border-radius: 12px;
+      font-size: 4rem;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.25s;
+      user-select: none;
+    }
+    .cell:hover {
+      background: #334155;
+    }
+    #restart {
+      padding: 14px 40px;
+      font-size: 1.1rem;
+      background: #38bdf8;
+      color: #0f172a;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    #restart:hover {
+      background: #0ea5e9;
+      transform: translateY(-3px);
+    }
+  </style>
 </head>
-
 <body>
+  <a href="../../index.html" class="btn" style="position: absolute; top: 20px; left: 20px; padding: 10px 20px;">← Back to Portfolio</a>
 
-<h1>Tic Tac Toe</h1>
+  <main>
+    <h1>Tic Tac Toe</h1>
+    <p id="status">Turn: X</p>
+    <div class="board" id="board"></div>
+    <button id="restart">Restart Game</button>
+  </main>
 
-<div class="board" id="board"></div>
-
-<script src="script.js"></script>
-
+  <script src="script.js"></script>
 </body>
-
 </html>

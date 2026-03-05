@@ -1,27 +1,60 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-<title>Weather App</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Weather App | Akele Coder</title>
+  <link rel="stylesheet" href="../../css/style.css" />
+  <style>
+    /* Page-specific tweaks – minimal overrides */
+    .weather-container {
+      max-width: 500px;
+      margin: 0 auto;
+      padding: 40px 20px;
+      background: #1e293b;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    }
+    input, button {
+      width: 100%;
+      margin: 12px 0;
+      padding: 14px;
+      font-size: 1.1rem;
+      border-radius: 8px;
+      border: 1px solid #334155;
+    }
+    button {
+      background: #38bdf8;
+      color: #0f172a;
+      border: none;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    button:hover {
+      background: #0ea5e9;
+      transform: translateY(-2px);
+    }
+    #weather {
+      margin-top: 30px;
+      text-align: center;
+    }
+    #weather img {
+      width: 100px;
+      height: 100px;
+    }
+  </style>
 </head>
-
 <body>
+  <a href="../../index.html" class="btn" style="position: absolute; top: 20px; left: 20px; padding: 10px 20px;">← Back to Portfolio</a>
 
-<div class="container">
+  <div class="weather-container">
+    <h1>Weather App</h1>
+    <input id="city" placeholder="Enter city name (e.g. Raipur, Delhi)" />
+    <button onclick="getWeather()">Get Weather</button>
+    <div id="weather"></div>
+  </div>
 
-<h1>Weather App</h1>
-
-<input id="city" placeholder="Enter city">
-
-<button onclick="getWeather()">Search</button>
-
-<div id="weather"></div>
-
-</div>
-
-<script src="script.js"></script>
-
+  <script src="script.js"></script>
 </body>
-
 </html>

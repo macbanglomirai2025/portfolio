@@ -1,23 +1,88 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-<title>Todo App</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Todo App | Akele Coder</title>
+  <link rel="stylesheet" href="../../css/style.css" />
+  <style>
+    /* Page-specific styles */
+    main {
+      max-width: 600px;
+      margin: 60px auto;
+      padding: 0 20px;
+    }
+    h1 {
+      margin-bottom: 30px;
+    }
+    .input-group {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 30px;
+    }
+    #task {
+      flex: 1;
+      padding: 14px;
+      font-size: 1.1rem;
+      border-radius: 8px;
+      border: 1px solid #334155;
+      background: #1e293b;
+      color: white;
+    }
+    button {
+      padding: 14px 30px;
+      background: #38bdf8;
+      color: #0f172a;
+      border: none;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    button:hover {
+      background: #0ea5e9;
+      transform: translateY(-2px);
+    }
+    ul {
+      list-style: none;
+    }
+    li {
+      background: #1e293b;
+      padding: 16px;
+      margin-bottom: 12px;
+      border-radius: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: all 0.2s;
+    }
+    li.completed span {
+      text-decoration: line-through;
+      opacity: 0.7;
+    }
+    li button {
+      background: #ef4444;
+      color: white;
+      padding: 8px 16px;
+      font-size: 0.9rem;
+    }
+    li button:hover {
+      background: #dc2626;
+    }
+  </style>
 </head>
-
 <body>
+  <a href="../../index.html" class="btn" style="position: absolute; top: 20px; left: 20px; padding: 10px 20px;">← Back to Portfolio</a>
 
-<h1>Todo App</h1>
+  <main>
+    <h1>Todo App</h1>
+    <div class="input-group">
+      <input id="task" placeholder="What needs to be done?" />
+      <button onclick="addTask()">Add</button>
+    </div>
+    <ul id="list"></ul>
+  </main>
 
-<input id="task" placeholder="New task">
-
-<button onclick="addTask()">Add</button>
-
-<ul id="list"></ul>
-
-<script src="script.js"></script>
-
+  <script src="script.js"></script>
 </body>
-
 </html>

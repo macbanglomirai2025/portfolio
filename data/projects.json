@@ -1,18 +1,26 @@
-
 [
-{
-"name":"Weather App",
-"description":"Weather app using API",
-"image":"images/weather.png",
-"live":"projects/weather-app/index.html",
-"github":"https://github.com/username/weather-app"
-},
-
-{
-"name":"Tic Tac Toe",
-"description":"JavaScript game project",
-"image":"images/tic.png",
-"live":"projects/tic-tac-toe/index.html",
-"github":"https://github.com/username/tic-tac-toe"
-}
+  {
+    "name": "Weather App",
+    "description": "Real-time weather fetch using OpenWeatherMap API – shows temperature, feels like, humidity, wind, and icon.",
+    "image": "images/weather.png",
+    "live": "projects/weather-app/index.html",
+    "github": "https://github.com/macbanglomirai2025/weather-app",
+    "tech": ["JavaScript", "Fetch API", "Async/Await", "Responsive"]
+  },
+  {
+    "name": "Tic Tac Toe",
+    "description": "Classic two-player game with win detection, draw check, restart button, and turn indicator.",
+    "image": "images/tic.png",
+    "live": "projects/tic-tac-toe/index.html",
+    "github": "https://github.com/macbanglomirai2025/tic-tac-toe",
+    "tech": ["JavaScript", "DOM Manipulation", "Game Logic", "Grid CSS"]
+  },
+  {
+    "name": "Todo App",
+    "description": "Persistent task manager with add, delete, complete toggle, and localStorage saving.",
+    "image": "images/todo.png",
+    "live": "projects/todo-app/index.html",
+    "github": "https://github.com/macbanglomirai2025/todo-app",
+    "tech": ["JavaScript", "LocalStorage", "Event Delegation", "Dynamic UI"]
+  }
 ]
