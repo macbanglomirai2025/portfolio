@@ -4,56 +4,78 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Weather App | Akele Coder</title>
-  <link rel="stylesheet" href="../../css/style.css" />
-  <style>
-    /* Page-specific tweaks – minimal overrides */
-    .weather-container {
-      max-width: 500px;
-      margin: 0 auto;
-      padding: 40px 20px;
-      background: #1e293b;
-      border-radius: 16px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-    }
-    input, button {
-      width: 100%;
-      margin: 12px 0;
-      padding: 14px;
-      font-size: 1.1rem;
-      border-radius: 8px;
-      border: 1px solid #334155;
-    }
-    button {
-      background: #38bdf8;
-      color: #0f172a;
-      border: none;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.3s;
-    }
-    button:hover {
-      background: #0ea5e9;
-      transform: translateY(-2px);
-    }
-    #weather {
-      margin-top: 30px;
-      text-align: center;
-    }
-    #weather img {
-      width: 100px;
-      height: 100px;
-    }
-  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <a href="../../index.html" class="btn" style="position: absolute; top: 20px; left: 20px; padding: 10px 20px;">← Back to Portfolio</a>
 
-  <div class="weather-container">
-    <h1>Weather App</h1>
-    <input id="city" placeholder="Enter city name (e.g. Raipur, Delhi)" />
-    <button onclick="getWeather()">Get Weather</button>
-    <div id="weather"></div>
-  </div>
+  <a href="../../index.html" class="back-link">
+    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+      <path d="M11 7H3M6 4L3 7l3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    Portfolio
+  </a>
+
+  <main class="page">
+
+    <header class="page-header">
+      <span class="page-tag">Live Data</span>
+      <h1 class="page-title">Weather</h1>
+      <p class="page-sub">Real-time conditions for any city.</p>
+    </header>
+
+    <!-- Search -->
+    <div class="search-row">
+      <div class="search-wrap">
+        <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/>
+        </svg>
+        <input
+          id="city"
+          type="text"
+          placeholder="Enter city — e.g. Raipur, Delhi…"
+          autocomplete="off"
+        />
+      </div>
+      <button id="search-btn" class="btn-search" onclick="getWeather()">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Quick cities -->
+    <div class="quick-cities">
+      <span class="quick-label">Quick:</span>
+      <button class="quick-btn" data-city="Raipur">Raipur</button>
+      <button class="quick-btn" data-city="Delhi">Delhi</button>
+      <button class="quick-btn" data-city="Mumbai">Mumbai</button>
+      <button class="quick-btn" data-city="Bangalore">Bangalore</button>
+    </div>
+
+    <!-- Weather card -->
+    <div id="weather" class="weather-card" style="display:none;" aria-live="polite">
+      <!-- Filled by JS -->
+    </div>
+
+    <!-- Loading -->
+    <div id="loading" class="loading" style="display:none;">
+      <div class="loading-dots"><span></span><span></span><span></span></div>
+      <p>Fetching weather…</p>
+    </div>
+
+    <!-- Error -->
+    <div id="error-msg" class="error-msg" style="display:none;" role="alert"></div>
+
+    <!-- API key note -->
+    <p class="api-note">
+      Powered by <a href="https://openweathermap.org" target="_blank" rel="noopener">OpenWeatherMap</a>.
+      Add your free API key in <code>script.js</code>.
+    </p>
+
+  </main>
 
   <script src="script.js"></script>
 </body>

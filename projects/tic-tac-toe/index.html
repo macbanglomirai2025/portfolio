@@ -4,69 +4,61 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Tic Tac Toe | Akele Coder</title>
-  <link rel="stylesheet" href="../../css/style.css" />
-  <style>
-    /* Page-specific styles */
-    main {
-      max-width: 600px;
-      margin: 60px auto;
-      text-align: center;
-    }
-    h1 {
-      margin-bottom: 20px;
-    }
-    #status {
-      font-size: 1.4rem;
-      margin: 20px 0;
-      min-height: 1.6em;
-    }
-    .board {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 12px;
-      max-width: 420px;
-      margin: 0 auto 30px;
-    }
-    .cell {
-      aspect-ratio: 1 / 1;
-      background: #1e293b;
-      border-radius: 12px;
-      font-size: 4rem;
-      font-weight: bold;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      transition: all 0.25s;
-      user-select: none;
-    }
-    .cell:hover {
-      background: #334155;
-    }
-    #restart {
-      padding: 14px 40px;
-      font-size: 1.1rem;
-      background: #38bdf8;
-      color: #0f172a;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: all 0.3s;
-    }
-    #restart:hover {
-      background: #0ea5e9;
-      transform: translateY(-3px);
-    }
-  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <a href="../../index.html" class="btn" style="position: absolute; top: 20px; left: 20px; padding: 10px 20px;">← Back to Portfolio</a>
 
-  <main>
-    <h1>Tic Tac Toe</h1>
-    <p id="status">Turn: X</p>
-    <div class="board" id="board"></div>
-    <button id="restart">Restart Game</button>
+  <a href="../../index.html" class="back-link">
+    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+      <path d="M11 7H3M6 4L3 7l3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    Portfolio
+  </a>
+
+  <main class="page">
+    <header class="page-header">
+      <span class="page-tag">Game</span>
+      <h1 class="page-title">Tic Tac Toe</h1>
+      <p class="page-sub">Classic strategy — first to three wins.</p>
+    </header>
+
+    <!-- Scoreboard -->
+    <div class="scoreboard">
+      <div class="score-block" id="score-x">
+        <span class="score-mark x-mark">X</span>
+        <span class="score-val" id="score-x-val">0</span>
+        <span class="score-label">Player X</span>
+      </div>
+      <div class="score-divider">
+        <span class="score-draws" id="score-draws">0</span>
+        <span class="score-draws-label">Draws</span>
+      </div>
+      <div class="score-block" id="score-o">
+        <span class="score-mark o-mark">O</span>
+        <span class="score-val" id="score-o-val">0</span>
+        <span class="score-label">Player O</span>
+      </div>
+    </div>
+
+    <!-- Status -->
+    <div class="status-bar">
+      <p id="status" class="status-text">Turn: <strong>X</strong></p>
+    </div>
+
+    <!-- Board -->
+    <div class="board" id="board" role="grid" aria-label="Tic Tac Toe board"></div>
+
+    <!-- Actions -->
+    <div class="actions">
+      <button id="restart" class="btn-primary">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
+        New Round
+      </button>
+      <button id="reset-scores" class="btn-ghost">Reset Scores</button>
+    </div>
   </main>
 
   <script src="script.js"></script>

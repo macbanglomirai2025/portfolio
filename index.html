@@ -1,152 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- Title: Includes EVERY variation you want to rank for -->
   <title>Aakash Kumar Sahu • Akele Coder | AkeleCoder – Frontend Developer Portfolio</title>
-
-  <!-- Description: Naturally repeats key terms + location + skills + brand -->
-  <meta name="description" content="Aakash Kumar Sahu (Akele Coder / AkeleCoder) – self-taught frontend developer from Chhattisgarh, India. Creating responsive websites, vanilla JavaScript projects, and interactive web apps. Check out Akele Coder portfolio of Aakash Kumar Sahu.">
-
-  <!-- Keywords: All possible combinations you listed -->
-  <meta name="keywords" content="Aakash Kumar Sahu, Aakash Kumar, Akele Coder, AkeleCoder, Aakash Kumar Sahu frontend, Akele Coder portfolio, frontend developer Chhattisgarh, vanilla javascript developer, self taught web developer India, Aakashkumarsahu, responsive web developer, javascript portfolio">
-
-  <!-- Allow full indexing -->
+  <meta name="description" content="Aakash Kumar Sahu (Akele Coder / AkeleCoder) – self-taught frontend developer from Chhattisgarh, India. Creating responsive websites, vanilla JavaScript projects, and interactive web apps.">
+  <meta name="keywords" content="Aakash Kumar Sahu, Aakash Kumar, Akele Coder, AkeleCoder, frontend developer Chhattisgarh, vanilla javascript developer, self taught web developer India">
   <meta name="robots" content="index, follow, max-image-preview:large" />
-
-  <!-- Your Google verification (keep it!) -->
   <meta name="google-site-verification" content="VmXktAtuGPjL1S2ZWhC9DBmolaau0RA2HMceq0quTHY" />
-
-  <!-- Canonical – use your real Netlify URL -->
   <link rel="canonical" href="https://akelecoder.netlify.app/" />
 
-  <!-- Open Graph – optimized for social shares (helps indirect SEO) -->
   <meta property="og:title" content="Aakash Kumar Sahu • Akele Coder | Frontend Developer Portfolio" />
-  <meta property="og:description" content="Aakash Kumar Sahu (Akele Coder / AkeleCoder) – frontend developer from Chhattisgarh. Vanilla JS projects, responsive design. Visit AkeleCoder portfolio." />
+  <meta property="og:description" content="Aakash Kumar Sahu (Akele Coder / AkeleCoder) – frontend developer from Chhattisgarh. Vanilla JS projects, responsive design." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://akelecoder.netlify.app/" />
   <meta property="og:image" content="https://akelecoder.netlify.app/images/og-preview.jpg" />
   <meta property="og:image:alt" content="Aakash Kumar Sahu – Akele Coder Portfolio" />
   <meta property="og:site_name" content="Akele Coder" />
 
-  <!-- Twitter/X Cards -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Aakash Kumar Sahu • Akele Coder | Frontend Developer" />
-  <meta name="twitter:description" content="Akele Coder (Aakash Kumar Sahu) – modern web apps with vanilla JavaScript. Explore portfolio." />
+  <meta name="twitter:description" content="Akele Coder (Aakash Kumar Sahu) – modern web apps with vanilla JavaScript." />
   <meta name="twitter:image" content="https://akelecoder.netlify.app/images/og-preview.jpg" />
 
-  <!-- Basic icons -->
   <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
   <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png" />
 
-  <!-- Fonts & CSS -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-  
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+
   <link rel="stylesheet" href="css/style.css" />
 </head>
 
 <body>
-  <!-- Fixed Navigation -->
-  <header class="header">
+
+  <!-- ── HEADER ── -->
+  <header class="header" id="header">
     <div class="container header-inner">
-      <a href="#" class="logo">AkeleCoder<span>.</span></a>
-      <nav class="nav">
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
+      <a href="#" class="logo">
+        <span class="logo-bracket">[</span>AkeleCoder<span class="logo-bracket">]</span>
+      </a>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span>
+      </button>
+
+      <nav class="nav" id="nav">
+        <a href="#about" class="nav-link">About</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#contact" class="nav-link">Contact</a>
+        <a href="mailto:aakashkumarrr.in@gmail.com" class="nav-cta">Hire Me</a>
       </nav>
     </div>
   </header>
 
-  <!-- Hero -->
+  <!-- Mobile nav overlay -->
+  <div class="nav-overlay" id="navOverlay"></div>
+
+  <!-- ── HERO ── -->
   <section id="hero" class="hero">
-    <div class="container">
-      <p class="greeting">Hello, I'm</p>
-      <h1 class="name">Aakash Kumar</h1>
-      <h2 class="role">Frontend Developer</h2>
-      <p class="lead">
-        I build clean, responsive, and interactive web experiences using modern vanilla JavaScript.
-      </p>
-      <div class="hero-actions">
-        <a href="#projects" class="btn primary">View Projects</a>
-        <a href="#contact" class="btn outline">Get in Touch</a>
+    <!-- Decorative grid lines -->
+    <div class="hero-grid" aria-hidden="true">
+      <div class="grid-line"></div>
+      <div class="grid-line"></div>
+      <div class="grid-line"></div>
+      <div class="grid-line"></div>
+    </div>
+
+    <!-- Floating orbs -->
+    <div class="orb orb-1" aria-hidden="true"></div>
+    <div class="orb orb-2" aria-hidden="true"></div>
+
+    <div class="container hero-content">
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        Available for projects
       </div>
+      <h1 class="hero-name">
+        <span class="line-reveal" style="--d:0">Aakash</span>
+        <span class="line-reveal accent-text" style="--d:1">Kumar.</span>
+      </h1>
+      <div class="hero-meta line-reveal" style="--d:2">
+        <span class="hero-role">Frontend Developer</span>
+        <span class="hero-sep" aria-hidden="true">—</span>
+        <span class="hero-location">Chhattisgarh, India</span>
+      </div>
+      <p class="hero-lead line-reveal" style="--d:3">
+        Building clean, performant web experiences with vanilla JavaScript and a sharp eye for design.
+      </p>
+      <div class="hero-actions line-reveal" style="--d:4">
+        <a href="#projects" class="btn-primary">
+          <span>Explore Work</span>
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="#contact" class="btn-ghost">Get in Touch</a>
+      </div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="scroll-indicator" aria-hidden="true">
+      <div class="scroll-line"></div>
+      <span>Scroll</span>
     </div>
   </section>
 
-  <!-- About -->
+  <!-- ── ABOUT ── -->
   <section id="about" class="section about">
     <div class="container">
-      <h2 class="section-title">About Me</h2>
+      <div class="section-label">01 / About</div>
       <div class="about-grid">
-        <div class="about-text">
-          <p>
-            Self-taught frontend developer from Chhattisgarh, India. Passionate about creating intuitive user interfaces that are fast, accessible, and maintainable.
-          </p>
-          <p>
-            Focused on vanilla JavaScript, semantic HTML, modern CSS, and thoughtful UX. Currently exploring animations, performance optimization, and building small but polished real-world projects.
-          </p>
-          <div class="skills">
-            <span>HTML5 • CSS3</span>
-            <span>JavaScript (ES6+)</span>
-            <span>Responsive Design</span>
-            <span>API Integration</span>
-            <span>Git • GitHub</span>
+
+        <div class="about-photo-wrap">
+          <div class="photo-frame">
+            <img src="images/profile.jpg" alt="Aakash Kumar Sahu" loading="lazy" class="photo" />
+            <div class="photo-accent" aria-hidden="true"></div>
+          </div>
+          <!-- Stats -->
+          <div class="about-stats">
+            <div class="stat">
+              <span class="stat-num">15+</span>
+              <span class="stat-label">Projects Built</span>
+            </div>
+            <div class="stat">
+              <span class="stat-num">2+</span>
+              <span class="stat-label">Years Learning</span>
+            </div>
           </div>
         </div>
-        <div class="about-photo">
-          <img src="images/profile.jpg" alt="Aakash Kumar" loading="lazy" class="photo" />
+
+        <div class="about-body">
+          <h2 class="about-heading">
+            Crafting interfaces<br><em>people love to use</em>
+          </h2>
+          <p>
+            Self-taught frontend developer from Chhattisgarh, India. I believe good web development is about more than writing code — it's about creating experiences that are fast, intuitive, and genuinely useful.
+          </p>
+          <p>
+            Currently focused on vanilla JavaScript, semantic HTML, modern CSS, and thoughtful UX. Exploring animations, performance optimization, and building small but polished real-world projects.
+          </p>
+
+          <div class="skills-grid">
+            <div class="skill-item">
+              <div class="skill-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+              </div>
+              <span>HTML5 &amp; CSS3</span>
+            </div>
+            <div class="skill-item">
+              <div class="skill-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 3H5a2 2 0 00-2 2v3m18 0V5a2 2 0 00-2-2h-3M3 16v3a2 2 0 002 2h3m8 0h3a2 2 0 002-2v-3"/></svg>
+              </div>
+              <span>JavaScript ES6+</span>
+            </div>
+            <div class="skill-item">
+              <div class="skill-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+              </div>
+              <span>Responsive Design</span>
+            </div>
+            <div class="skill-item">
+              <div class="skill-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 9l3 3-3 3M13 15h3M3 4h18M3 20h18M3 4v16"/></svg>
+              </div>
+              <span>API Integration</span>
+            </div>
+            <div class="skill-item">
+              <div class="skill-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M15 9l-6 6M9 9l6 6"/></svg>
+              </div>
+              <span>Git &amp; GitHub</span>
+            </div>
+            <div class="skill-item">
+              <div class="skill-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+              </div>
+              <span>Performance</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── PROJECTS ── -->
+  <section id="projects" class="section projects">
+    <div class="container">
+      <div class="section-label">02 / Projects</div>
+      <div class="projects-header">
+        <h2 class="section-heading">Selected Work</h2>
+        <p class="section-sub">A curated set of projects I've built and shipped.</p>
+      </div>
+
+      <div id="project-loading" class="projects-loading">
+        <div class="loading-dots">
+          <span></span><span></span><span></span>
+        </div>
+        <p>Fetching projects…</p>
+      </div>
+
+      <div id="project-container" class="projects-grid" style="display:none;"></div>
+
+      <div id="project-error" class="projects-error" style="display:none;">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+        <p>Failed to load projects. Please refresh the page.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CONTACT ── -->
+  <section id="contact" class="section contact">
+    <div class="container">
+      <div class="section-label">03 / Contact</div>
+      <div class="contact-inner">
+        <div class="contact-left">
+          <h2 class="contact-heading">
+            Let's build<br>something <em>great</em>.
+          </h2>
+          <p class="contact-desc">
+            Open to freelance work, interesting projects, or just a good conversation about the web. Don't hesitate to reach out.
+          </p>
+        </div>
+        <div class="contact-right">
+          <a href="mailto:aakashkumarrr.in@gmail.com" class="contact-card">
+            <div class="contact-card-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <div class="contact-card-body">
+              <span class="contact-card-label">Email</span>
+              <span class="contact-card-value">aakashkumarrr.in@gmail.com</span>
+            </div>
+            <svg class="contact-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a href="https://github.com/AkeleCoder" target="_blank" rel="noopener noreferrer" class="contact-card">
+            <div class="contact-card-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
+            </div>
+            <div class="contact-card-body">
+              <span class="contact-card-label">GitHub</span>
+              <span class="contact-card-value">@AkeleCoder</span>
+            </div>
+            <svg class="contact-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Projects -->
-<section id="projects" class="section projects">
-  <div class="container">
-    <h2 class="section-title">Selected Projects</h2>
-    
-    <!-- Placeholder / loading state (prevents layout jump) -->
-    <div id="project-loading" class="projects-loading">
-      <div class="loading-spinner"></div>
-      <p>Loading projects...</p>
-    </div>
-    
-    <!-- Actual grid – hidden until loaded -->
-    <div id="project-container" class="projects-grid" style="display: none;">
-      <!-- Cards will be inserted here by JS -->
-    </div>
-    
-    <!-- Error state (optional but good UX) -->
-    <div id="project-error" class="projects-error" style="display: none;">
-      <p>Failed to load projects. Please check your connection or try refreshing.</p>
-    </div>
-  </div>
-</section>
-
-  <!-- Contact -->
-  <section id="contact" class="section contact">
-    <div class="container">
-      <h2 class="section-title">Get in Touch</h2>
-      <p class="contact-lead">
-        I'm currently open to freelance opportunities, interesting projects, or just a good conversation about web development.
-      </p>
-      <div class="contact-links">
-        <a href="mailto:aakashkumarrr.in@gmail.com" class="contact-item">aakashkumarrr.in@gmail.com</a>
-        <a href="https://github.com/AkeleCoder" target="_blank" rel="noopener" class="contact-item">GitHub</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
+  <!-- ── FOOTER ── -->
   <footer class="footer">
-    <div class="container">
-      <p>© <script>document.write(new Date().getFullYear())</script> AkeleCoder • Built with vanilla HTML, CSS & JavaScript</p>
+    <div class="container footer-inner">
+      <a href="#" class="footer-logo">
+        <span class="logo-bracket">[</span>AkeleCoder<span class="logo-bracket">]</span>
+      </a>
+      <p class="footer-copy">
+        © <script>document.write(new Date().getFullYear())</script> Aakash Kumar Sahu
+        <span class="footer-sep" aria-hidden="true">·</span>
+        Built with vanilla HTML, CSS &amp; JS
+      </p>
+      <a href="#hero" class="back-top" aria-label="Back to top">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 13V3M4 7l4-4 4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
     </div>
   </footer>
 
   <script src="js/script.js"></script>
+  <script>
+    // ── Header scroll state ──
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('scrolled', window.scrollY > 40);
+    }, { passive: true });
+
+    // ── Hamburger menu ──
+    const menuToggle = document.getElementById('menuToggle');
+    const nav        = document.getElementById('nav');
+    const overlay    = document.getElementById('navOverlay');
+
+    function closeMenu() {
+      nav.classList.remove('open');
+      overlay.classList.remove('visible');
+      menuToggle.setAttribute('aria-expanded', 'false');
+      menuToggle.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    menuToggle.addEventListener('click', () => {
+      const isOpen = nav.classList.toggle('open');
+      overlay.classList.toggle('visible', isOpen);
+      menuToggle.setAttribute('aria-expanded', String(isOpen));
+      menuToggle.classList.toggle('active', isOpen);
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+    });
+
+    overlay.addEventListener('click', closeMenu);
+
+    nav.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', closeMenu);
+    });
+
+    // ── Intersection observer for reveal animations ──
+    const reveals = document.querySelectorAll('.fade-up');
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.15 });
+    reveals.forEach(el => io.observe(el));
+  </script>
 </body>
 </html>
