@@ -1,0 +1,18 @@
+
+[
+{
+"name":"Weather App",
+"description":"Weather app using API",
+"image":"images/weather.png",
+"live":"projects/weather-app/index.html",
+"github":"https://github.com/username/weather-app"
+},
+
+{
+"name":"Tic Tac Toe",
+"description":"JavaScript game project",
+"image":"images/tic.png",
+"live":"projects/tic-tac-toe/index.html",
+"github":"https://github.com/username/tic-tac-toe"
+}
+]
