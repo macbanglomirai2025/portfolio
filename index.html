@@ -10,18 +10,14 @@
   <meta name="robots" content="index, follow, max-image-preview:large" />
   <meta name="google-site-verification" content="VmXktAtuGPjL1S2ZWhC9DBmolaau0RA2HMceq0quTHY" />
   <link rel="canonical" href="https://akelecoder.netlify.app/" />
-
   <meta property="og:title" content="Aakash Kumar Sahu • Akele Coder | Frontend Developer Portfolio" />
-  <meta property="og:description" content="Aakash Kumar Sahu (Akele Coder / AkeleCoder) – frontend developer from Chhattisgarh. Vanilla JS projects, responsive design." />
+  <meta property="og:description" content="Self-taught frontend developer from Chhattisgarh building clean, performant web experiences." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://akelecoder.netlify.app/" />
   <meta property="og:image" content="https://akelecoder.netlify.app/images/og-preview.jpg" />
-  <meta property="og:image:alt" content="Aakash Kumar Sahu – Akele Coder Portfolio" />
   <meta property="og:site_name" content="Akele Coder" />
-
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Aakash Kumar Sahu • Akele Coder | Frontend Developer" />
-  <meta name="twitter:description" content="Akele Coder (Aakash Kumar Sahu) – modern web apps with vanilla JavaScript." />
   <meta name="twitter:image" content="https://akelecoder.netlify.app/images/og-preview.jpg" />
 
   <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
@@ -29,155 +25,178 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
-
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
 </head>
 
 <body>
 
-  <!-- ── HEADER ── -->
+  <!-- ══ CURSOR (desktop only) ══════════════════════════ -->
+  <div class="cursor" id="cursor" aria-hidden="true"></div>
+
+  <!-- ══ HEADER ════════════════════════════════════════ -->
   <header class="header" id="header">
-    <div class="container header-inner">
-      <a href="#" class="logo">
-        <span class="logo-bracket">[</span>AkeleCoder<span class="logo-bracket">]</span>
+    <div class="wrap header-wrap">
+
+      <a href="#" class="logo" aria-label="AkeleCoder — home">
+        <span class="logo-mark">[</span>AC<span class="logo-mark">]</span>
       </a>
 
-      <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">
-        <span></span><span></span>
-      </button>
-
-      <nav class="nav" id="nav">
-        <a href="#about" class="nav-link">About</a>
+      <nav class="nav" id="nav" aria-label="Main navigation">
+        <a href="#about"    class="nav-link">About</a>
         <a href="#projects" class="nav-link">Projects</a>
-        <a href="#contact" class="nav-link">Contact</a>
-        <a href="mailto:aakashkumarrr.in@gmail.com" class="nav-cta">Hire Me</a>
+        <a href="#contact"  class="nav-link">Contact</a>
       </nav>
+
+      <div class="header-end">
+        <a href="mailto:aakashkumarrr.in@gmail.com" class="nav-hire">Hire Me</a>
+        <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false">
+          <span class="b-line"></span>
+          <span class="b-line"></span>
+          <span class="b-line"></span>
+        </button>
+      </div>
+
     </div>
   </header>
 
-  <!-- Mobile nav overlay -->
-  <div class="nav-overlay" id="navOverlay"></div>
+  <!-- ══ MOBILE NAV ════════════════════════════════════ -->
+  <div class="mnav" id="mnav" aria-hidden="true">
+    <div class="mnav-inner">
+      <a href="#about"    class="mnav-link"><em>01</em>About</a>
+      <a href="#projects" class="mnav-link"><em>02</em>Projects</a>
+      <a href="#contact"  class="mnav-link"><em>03</em>Contact</a>
+      <a href="mailto:aakashkumarrr.in@gmail.com" class="mnav-cta">
+        Let's Work Together
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </a>
+    </div>
+  </div>
+  <div class="mnav-overlay" id="mnav-overlay"></div>
 
-  <!-- ── HERO ── -->
+  <!-- ══ HERO ══════════════════════════════════════════ -->
   <section id="hero" class="hero">
-    <!-- Decorative grid lines -->
-    <div class="hero-grid" aria-hidden="true">
-      <div class="grid-line"></div>
-      <div class="grid-line"></div>
-      <div class="grid-line"></div>
-      <div class="grid-line"></div>
+
+    <div class="hero-bg" aria-hidden="true">
+      <div class="hbg-blob hbg-1"></div>
+      <div class="hbg-blob hbg-2"></div>
+      <div class="hbg-blob hbg-3"></div>
+      <div class="hbg-grid"></div>
+      <div class="hbg-noise"></div>
     </div>
 
-    <!-- Floating orbs -->
-    <div class="orb orb-1" aria-hidden="true"></div>
-    <div class="orb orb-2" aria-hidden="true"></div>
+    <div class="wrap hero-wrap">
 
-    <div class="container hero-content">
-      <div class="hero-badge">
-        <span class="badge-dot"></span>
-        Available for projects
+      <!-- Text block -->
+      <div class="hero-text">
+        <div class="h-badge" data-reveal>
+          <span class="h-badge-dot"></span>
+          Available for projects
+        </div>
+
+        <h1 class="h-name" data-reveal data-reveal-delay="1">
+          <span>Aakash</span>
+          <span class="h-name-accent">Kumar<span class="h-dot">.</span></span>
+        </h1>
+
+        <div class="h-role" data-reveal data-reveal-delay="2">
+          <span class="h-role-tag">Frontend Developer</span>
+          <span class="h-role-sep" aria-hidden="true">/</span>
+          <span class="h-loc">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Chhattisgarh, IN
+          </span>
+        </div>
+
+        <p class="h-lead" data-reveal data-reveal-delay="3">
+          I craft clean, fast web experiences with vanilla JavaScript — solid engineering meets sharp design.
+        </p>
+
+        <div class="h-ctas" data-reveal data-reveal-delay="4">
+          <a href="#projects" class="btn-fill">
+            View Projects
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a href="#contact" class="btn-line">Say Hello</a>
+        </div>
       </div>
-      <h1 class="hero-name">
-        <span class="line-reveal" style="--d:0">Aakash</span>
-        <span class="line-reveal accent-text" style="--d:1">Kumar.</span>
-      </h1>
-      <div class="hero-meta line-reveal" style="--d:2">
-        <span class="hero-role">Frontend Developer</span>
-        <span class="hero-sep" aria-hidden="true">—</span>
-        <span class="hero-location">Chhattisgarh, India</span>
+
+      <!-- Code card (shows on ≥ 768px) -->
+      <div class="hero-card" data-reveal data-reveal-delay="3" aria-hidden="true">
+        <div class="hcard-bar">
+          <span class="hcard-dot hcd-r"></span>
+          <span class="hcard-dot hcd-y"></span>
+          <span class="hcard-dot hcd-g"></span>
+          <span class="hcard-title">portfolio.js</span>
+        </div>
+        <pre class="hcard-code"><span class="c-kw">const</span> <span class="c-id">dev</span> <span class="c-op">=</span> <span class="c-br">{</span>
+  <span class="c-key">name</span><span class="c-op">:</span>  <span class="c-str">"Aakash Kumar"</span><span class="c-p">,</span>
+  <span class="c-key">role</span><span class="c-op">:</span>  <span class="c-str">"Frontend Dev"</span><span class="c-p">,</span>
+  <span class="c-key">stack</span><span class="c-op">:</span> <span class="c-br">[</span>
+    <span class="c-str">"HTML5"</span><span class="c-p">,</span>
+    <span class="c-str">"CSS3"</span><span class="c-p">,</span>
+    <span class="c-str">"JavaScript"</span>
+  <span class="c-br">]</span><span class="c-p">,</span>
+  <span class="c-key">status</span><span class="c-op">:</span> <span class="c-str c-blink">"open to work ✦"</span>
+<span class="c-br">}</span><span class="c-p">;</span></pre>
+        <div class="hcard-badge hcb-1">⚡ Fast</div>
+        <div class="hcard-badge hcb-2">✦ Clean</div>
       </div>
-      <p class="hero-lead line-reveal" style="--d:3">
-        Building clean, performant web experiences with vanilla JavaScript and a sharp eye for design.
-      </p>
-      <div class="hero-actions line-reveal" style="--d:4">
-        <a href="#projects" class="btn-primary">
-          <span>Explore Work</span>
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </a>
-        <a href="#contact" class="btn-ghost">Get in Touch</a>
+
+    </div>
+
+    <!-- Scrolling tech marquee -->
+    <div class="marquee-wrap" aria-hidden="true">
+      <div class="marquee-track">
+        <span>HTML5</span><i>·</i><span>CSS3</span><i>·</i><span>JavaScript</span><i>·</i>
+        <span>Responsive Design</span><i>·</i><span>API Integration</span><i>·</i>
+        <span>Git &amp; GitHub</span><i>·</i><span>Performance</span><i>·</i><span>Accessibility</span><i>·</i>
+        <!-- duplicate for seamless -->
+        <span>HTML5</span><i>·</i><span>CSS3</span><i>·</i><span>JavaScript</span><i>·</i>
+        <span>Responsive Design</span><i>·</i><span>API Integration</span><i>·</i>
+        <span>Git &amp; GitHub</span><i>·</i><span>Performance</span><i>·</i><span>Accessibility</span><i>·</i>
       </div>
     </div>
 
-    <!-- Scroll indicator -->
-    <div class="scroll-indicator" aria-hidden="true">
-      <div class="scroll-line"></div>
-      <span>Scroll</span>
-    </div>
   </section>
 
-  <!-- ── ABOUT ── -->
+  <!-- ══ ABOUT ══════════════════════════════════════════ -->
   <section id="about" class="section about">
-    <div class="container">
-      <div class="section-label">01 / About</div>
+    <div class="wrap">
       <div class="about-grid">
 
-        <div class="about-photo-wrap">
-          <div class="photo-frame">
-            <img src="images/profile.jpg" alt="Aakash Kumar Sahu" loading="lazy" class="photo" />
-            <div class="photo-accent" aria-hidden="true"></div>
-          </div>
-          <!-- Stats -->
-          <div class="about-stats">
-            <div class="stat">
-              <span class="stat-num">15+</span>
-              <span class="stat-label">Projects Built</span>
+        <!-- Photo -->
+        <div class="about-photo" data-reveal>
+          <div class="aphoto-wrap">
+            <div class="aphoto-deco" aria-hidden="true"></div>
+            <img src="images/profile.jpg" alt="Aakash Kumar Sahu" loading="lazy" class="aphoto-img" />
+            <div class="aphoto-stat as-1">
+              <b>15+</b><span>Projects</span>
             </div>
-            <div class="stat">
-              <span class="stat-num">2+</span>
-              <span class="stat-label">Years Learning</span>
+            <div class="aphoto-stat as-2">
+              <b>2+</b><span>Years</span>
             </div>
           </div>
         </div>
 
+        <!-- Text -->
         <div class="about-body">
-          <h2 class="about-heading">
-            Crafting interfaces<br><em>people love to use</em>
+          <div class="sec-label" data-reveal>01 — About</div>
+          <h2 class="sec-title" data-reveal data-reveal-delay="1">
+            Building things<br><em>people love to use</em>
           </h2>
-          <p>
-            Self-taught frontend developer from Chhattisgarh, India. I believe good web development is about more than writing code — it's about creating experiences that are fast, intuitive, and genuinely useful.
-          </p>
-          <p>
-            Currently focused on vanilla JavaScript, semantic HTML, modern CSS, and thoughtful UX. Exploring animations, performance optimization, and building small but polished real-world projects.
-          </p>
+          <div class="about-copy" data-reveal data-reveal-delay="2">
+            <p>Self-taught frontend developer from Chhattisgarh, India. I believe great web development is about more than writing code — it's about crafting experiences that feel fast, intuitive, and genuinely useful.</p>
+            <p>Focused on vanilla JavaScript, semantic HTML, modern CSS, and thoughtful UX. Always learning, always building.</p>
+          </div>
 
-          <div class="skills-grid">
-            <div class="skill-item">
-              <div class="skill-icon">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-              </div>
-              <span>HTML5 &amp; CSS3</span>
-            </div>
-            <div class="skill-item">
-              <div class="skill-icon">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 3H5a2 2 0 00-2 2v3m18 0V5a2 2 0 00-2-2h-3M3 16v3a2 2 0 002 2h3m8 0h3a2 2 0 002-2v-3"/></svg>
-              </div>
-              <span>JavaScript ES6+</span>
-            </div>
-            <div class="skill-item">
-              <div class="skill-icon">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
-              </div>
-              <span>Responsive Design</span>
-            </div>
-            <div class="skill-item">
-              <div class="skill-icon">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 9l3 3-3 3M13 15h3M3 4h18M3 20h18M3 4v16"/></svg>
-              </div>
-              <span>API Integration</span>
-            </div>
-            <div class="skill-item">
-              <div class="skill-icon">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M15 9l-6 6M9 9l6 6"/></svg>
-              </div>
-              <span>Git &amp; GitHub</span>
-            </div>
-            <div class="skill-item">
-              <div class="skill-icon">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
-              </div>
-              <span>Performance</span>
-            </div>
+          <div class="chips" data-reveal data-reveal-delay="3">
+            <span class="chip"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>HTML5 &amp; CSS3</span>
+            <span class="chip"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>JS ES6+</span>
+            <span class="chip"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>Responsive</span>
+            <span class="chip"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>APIs</span>
+            <span class="chip"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>Git &amp; GitHub</span>
+            <span class="chip"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/></svg>Performance</span>
           </div>
         </div>
 
@@ -185,130 +204,166 @@
     </div>
   </section>
 
-  <!-- ── PROJECTS ── -->
+  <!-- ══ PROJECTS ═══════════════════════════════════════ -->
   <section id="projects" class="section projects">
-    <div class="container">
-      <div class="section-label">02 / Projects</div>
-      <div class="projects-header">
-        <h2 class="section-heading">Selected Work</h2>
-        <p class="section-sub">A curated set of projects I've built and shipped.</p>
-      </div>
+    <div class="wrap">
+      <div class="sec-label" data-reveal>02 — Work</div>
+      <h2 class="sec-title" data-reveal data-reveal-delay="1">Selected Projects</h2>
 
-      <div id="project-loading" class="projects-loading">
-        <div class="loading-dots">
-          <span></span><span></span><span></span>
-        </div>
+      <div id="project-loading" class="proj-loading">
+        <div class="loading-dots"><span></span><span></span><span></span></div>
         <p>Fetching projects…</p>
       </div>
 
-      <div id="project-container" class="projects-grid" style="display:none;"></div>
+      <div id="project-container" class="proj-grid" style="display:none;"></div>
 
-      <div id="project-error" class="projects-error" style="display:none;">
-        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
-        <p>Failed to load projects. Please refresh the page.</p>
+      <div id="project-error" class="proj-error" style="display:none;">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+        <p>Failed to load projects. Please refresh.</p>
       </div>
     </div>
   </section>
 
-  <!-- ── CONTACT ── -->
+  <!-- ══ CONTACT ════════════════════════════════════════ -->
   <section id="contact" class="section contact">
-    <div class="container">
-      <div class="section-label">03 / Contact</div>
-      <div class="contact-inner">
-        <div class="contact-left">
-          <h2 class="contact-heading">
-            Let's build<br>something <em>great</em>.
+    <div class="wrap">
+      <div class="contact-grid">
+
+        <div class="contact-left" data-reveal>
+          <div class="sec-label">03 — Contact</div>
+          <h2 class="sec-title">
+            Let's build<br><em>something great</em>
           </h2>
-          <p class="contact-desc">
-            Open to freelance work, interesting projects, or just a good conversation about the web. Don't hesitate to reach out.
-          </p>
+          <p class="contact-sub">Open to freelance, interesting projects, or a great conversation about the web.</p>
         </div>
-        <div class="contact-right">
-          <a href="mailto:aakashkumarrr.in@gmail.com" class="contact-card">
-            <div class="contact-card-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+
+        <div class="contact-right" data-reveal data-reveal-delay="1">
+          <a href="mailto:aakashkumarrr.in@gmail.com" class="ccard">
+            <div class="ccard-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
             </div>
-            <div class="contact-card-body">
-              <span class="contact-card-label">Email</span>
-              <span class="contact-card-value">aakashkumarrr.in@gmail.com</span>
+            <div class="ccard-body">
+              <span class="ccard-lbl">Email</span>
+              <span class="ccard-val">aakashkumarrr.in@gmail.com</span>
             </div>
-            <svg class="contact-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <svg class="ccard-arr" width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
           </a>
-          <a href="https://github.com/AkeleCoder" target="_blank" rel="noopener noreferrer" class="contact-card">
-            <div class="contact-card-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
+
+          <a href="https://github.com/AkeleCoder" target="_blank" rel="noopener noreferrer" class="ccard">
+            <div class="ccard-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
             </div>
-            <div class="contact-card-body">
-              <span class="contact-card-label">GitHub</span>
-              <span class="contact-card-value">@AkeleCoder</span>
+            <div class="ccard-body">
+              <span class="ccard-lbl">GitHub</span>
+              <span class="ccard-val">@AkeleCoder</span>
             </div>
-            <svg class="contact-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <svg class="ccard-arr" width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </a>
+
+          <a href="mailto:aakashkumarrr.in@gmail.com" class="ccard-big">
+            Start a conversation
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
           </a>
         </div>
+
       </div>
     </div>
   </section>
 
-  <!-- ── FOOTER ── -->
+  <!-- ══ FOOTER ════════════════════════════════════════ -->
   <footer class="footer">
-    <div class="container footer-inner">
-      <a href="#" class="footer-logo">
-        <span class="logo-bracket">[</span>AkeleCoder<span class="logo-bracket">]</span>
-      </a>
-      <p class="footer-copy">
-        © <script>document.write(new Date().getFullYear())</script> Aakash Kumar Sahu
-        <span class="footer-sep" aria-hidden="true">·</span>
-        Built with vanilla HTML, CSS &amp; JS
-      </p>
-      <a href="#hero" class="back-top" aria-label="Back to top">
-        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 13V3M4 7l4-4 4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <div class="wrap footer-inner">
+      <a href="#" class="footer-logo"><span class="logo-mark">[</span>AC<span class="logo-mark">]</span></a>
+      <p class="footer-copy">© <script>document.write(new Date().getFullYear())</script> Aakash Kumar Sahu · Vanilla JS</p>
+      <a href="#hero" class="footer-up" aria-label="Back to top">
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 13V3M4 7l4-4 4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
       </a>
     </div>
   </footer>
 
   <script src="js/script.js"></script>
   <script>
-    // ── Header scroll state ──
+  (() => {
+    // ── Header hide-on-scroll ──────────────────────────
     const header = document.getElementById('header');
+    let lastY = 0;
     window.addEventListener('scroll', () => {
-      header.classList.toggle('scrolled', window.scrollY > 40);
+      const y = window.scrollY;
+      header.classList.toggle('scrolled', y > 50);
+      header.classList.toggle('header-hide', y > lastY + 8 && y > 150);
+      header.classList.toggle('header-show', y < lastY - 8);
+      lastY = y;
     }, { passive: true });
 
-    // ── Hamburger menu ──
-    const menuToggle = document.getElementById('menuToggle');
-    const nav        = document.getElementById('nav');
-    const overlay    = document.getElementById('navOverlay');
+    // ── Mobile menu ────────────────────────────────────
+    const burger  = document.getElementById('burger');
+    const mnav    = document.getElementById('mnav');
+    const overlay = document.getElementById('mnav-overlay');
 
-    function closeMenu() {
-      nav.classList.remove('open');
-      overlay.classList.remove('visible');
-      menuToggle.setAttribute('aria-expanded', 'false');
-      menuToggle.classList.remove('active');
+    const openM = () => {
+      burger.classList.add('open'); burger.setAttribute('aria-expanded','true');
+      mnav.classList.add('open');   mnav.setAttribute('aria-hidden','false');
+      overlay.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    };
+    const closeM = () => {
+      burger.classList.remove('open'); burger.setAttribute('aria-expanded','false');
+      mnav.classList.remove('open');   mnav.setAttribute('aria-hidden','true');
+      overlay.classList.remove('open');
       document.body.style.overflow = '';
+    };
+    burger.addEventListener('click', () =>
+      burger.classList.contains('open') ? closeM() : openM()
+    );
+    overlay.addEventListener('click', closeM);
+    mnav.querySelectorAll('a').forEach(a => a.addEventListener('click', closeM));
+
+    // ── Scroll reveal ──────────────────────────────────
+    const els = document.querySelectorAll('[data-reveal]');
+    new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (!e.isIntersecting) return;
+        const d = +(e.target.dataset.revealDelay || 0);
+        setTimeout(() => e.target.classList.add('revealed'), d * 90);
+        io.unobserve(e.target);
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -32px 0px' }).observe(
+      ...Array.from(els)
+    );
+    // fix: use forEach
+    const io2 = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (!e.isIntersecting) return;
+        const d = +(e.target.dataset.revealDelay || 0);
+        setTimeout(() => e.target.classList.add('revealed'), d * 90);
+        io2.unobserve(e.target);
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -32px 0px' });
+    els.forEach(el => io2.observe(el));
+
+    // ── Custom cursor ──────────────────────────────────
+    const cursor = document.getElementById('cursor');
+    if (window.matchMedia('(pointer:fine)').matches) {
+      let mx=-100,my=-100,cx=-100,cy=-100;
+      window.addEventListener('mousemove', e => { mx=e.clientX; my=e.clientY; }, { passive:true });
+      (function raf() {
+        cx += (mx-cx)*0.15; cy += (my-cy)*0.15;
+        cursor.style.transform = `translate(${cx}px,${cy}px) translate(-50%,-50%)`;
+        requestAnimationFrame(raf);
+      })();
+      document.querySelectorAll('a,button').forEach(el => {
+        el.addEventListener('mouseenter', () => cursor.classList.add('big'));
+        el.addEventListener('mouseleave', () => cursor.classList.remove('big'));
+      });
+    } else {
+      cursor.style.display = 'none';
     }
 
-    menuToggle.addEventListener('click', () => {
-      const isOpen = nav.classList.toggle('open');
-      overlay.classList.toggle('visible', isOpen);
-      menuToggle.setAttribute('aria-expanded', String(isOpen));
-      menuToggle.classList.toggle('active', isOpen);
-      document.body.style.overflow = isOpen ? 'hidden' : '';
-    });
-
-    overlay.addEventListener('click', closeMenu);
-
-    nav.querySelectorAll('a').forEach(a => {
-      a.addEventListener('click', closeMenu);
-    });
-
-    // ── Intersection observer for reveal animations ──
-    const reveals = document.querySelectorAll('.fade-up');
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
-        if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
-      });
-    }, { threshold: 0.15 });
-    reveals.forEach(el => io.observe(el));
+    // ── Chips stagger var ──────────────────────────────
+    document.querySelectorAll('.chip').forEach((c,i) =>
+      c.style.setProperty('--ci', i)
+    );
+  })();
   </script>
 </body>
 </html>
