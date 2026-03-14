@@ -4,13 +4,19 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Tic Tac Toe | Akele Coder</title>
+  <meta name="description" content="Tic Tac Toe game with scoreboard — built by Aakash Kumar Sahu (AkeleCoder)." />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap"
+    rel="stylesheet"
+  />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
+  <!-- Back to portfolio -->
   <a href="../../index.html" class="back-link">
     <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
       <path d="M11 7H3M6 4L3 7l3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -19,6 +25,8 @@
   </a>
 
   <main class="page">
+
+    <!-- Page header -->
     <header class="page-header">
       <span class="page-tag">Game</span>
       <h1 class="page-title">Tic Tac Toe</h1>
@@ -26,39 +34,60 @@
     </header>
 
     <!-- Scoreboard -->
-    <div class="scoreboard">
-      <div class="score-block" id="score-x">
-        <span class="score-mark x-mark">X</span>
+    <div class="scoreboard" aria-label="Score">
+      <div class="score-block" id="score-x" aria-label="Player X score">
+        <span class="score-mark x-mark" aria-hidden="true">X</span>
         <span class="score-val" id="score-x-val">0</span>
         <span class="score-label">Player X</span>
       </div>
-      <div class="score-divider">
+      <div class="score-divider" aria-label="Draws">
         <span class="score-draws" id="score-draws">0</span>
         <span class="score-draws-label">Draws</span>
       </div>
-      <div class="score-block" id="score-o">
-        <span class="score-mark o-mark">O</span>
+      <div class="score-block" id="score-o" aria-label="Player O score">
+        <span class="score-mark o-mark" aria-hidden="true">O</span>
         <span class="score-val" id="score-o-val">0</span>
         <span class="score-label">Player O</span>
       </div>
     </div>
 
-    <!-- Status -->
+    <!-- Status — aria-live announces turn/win/draw to screen readers -->
     <div class="status-bar">
-      <p id="status" class="status-text">Turn: <strong>X</strong></p>
+      <p
+        id="status"
+        class="status-text"
+        aria-live="polite"
+        aria-atomic="true"
+      >Turn: X</p>
     </div>
 
-    <!-- Board -->
-    <div class="board" id="board" role="grid" aria-label="Tic Tac Toe board"></div>
+    <!-- Board — built by JS, role="grid" with keyboard nav -->
+    <div
+      class="board"
+      id="board"
+      role="grid"
+      aria-label="Tic Tac Toe board"
+    ></div>
 
-    <!-- Actions -->
+    <!-- Keyboard hint (hidden on touch devices via CSS) -->
+    <p class="keyboard-hint" aria-hidden="true">
+      Use arrow keys to navigate · Enter or Space to place
+    </p>
+
+    <!-- Action buttons -->
     <div class="actions">
-      <button id="restart" class="btn-primary">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
+      <button id="restart" class="btn-primary" aria-label="Start a new round">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/>
+          <path d="M3 3v5h5"/>
+        </svg>
         New Round
       </button>
-      <button id="reset-scores" class="btn-ghost">Reset Scores</button>
+      <button id="reset-scores" class="btn-ghost" aria-label="Reset all scores to zero">
+        Reset Scores
+      </button>
     </div>
+
   </main>
 
   <script src="script.js"></script>
