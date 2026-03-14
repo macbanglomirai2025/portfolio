@@ -1,369 +1,500 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Aakash Kumar Sahu • Akele Coder | AkeleCoder – Frontend Developer Portfolio</title>
-  <meta name="description" content="Aakash Kumar Sahu (Akele Coder / AkeleCoder) – self-taught frontend developer from Chhattisgarh, India. Creating responsive websites, vanilla JavaScript projects, and interactive web apps.">
-  <meta name="keywords" content="Aakash Kumar Sahu, Aakash Kumar, Akele Coder, AkeleCoder, frontend developer Chhattisgarh, vanilla javascript developer, self taught web developer India">
+  <!-- ══ PRIMARY SEO ══════════════════════════════════════════════ -->
+  <title>Aakash Kumar Sahu | AkeleCoder — Frontend Developer Portfolio</title>
+  <meta name="description" content="Aakash Kumar Sahu (AkeleCoder) — BTech CSE 1st year student and self-taught frontend developer from Chhattisgarh, India. Builds responsive websites with HTML, CSS and JavaScript." />
+
+  <!-- All name / brand variations Google should index -->
+  <meta name="keywords" content="
+    Aakash Kumar Sahu, Aakash Kumar, Aakash Sahu, Aakash,
+    AkeleCoder, Akele Coder, akelecoder, akele coder,
+    aakash kumar sahu portfolio, aakash portfolio, aakashportfolio,
+    aakash kumar portfolio, aakash sahu portfolio,
+    aakash frontend developer, aakash web developer,
+    aakash chhattisgarh, aakash india developer,
+    aakash btech cse, aakash cse student,
+    akelecoder portfolio, akelecoder github,
+    akelecoder netlify, akelecoder.netlify.app,
+    frontend developer chhattisgarh, web developer chhattisgarh,
+    self taught developer india, btech cse student developer,
+    html css javascript developer india,
+    vanilla javascript developer, javascript student portfolio,
+    aakash kumar sahu github, aakash kumar sahu netlify,
+    aakash kumar sahu web developer, aakash kumar sahu coder,
+    portfolio aakash, portfolio akelecoder
+  " />
+
+  <meta name="author" content="Aakash Kumar Sahu" />
   <meta name="robots" content="index, follow, max-image-preview:large" />
   <meta name="google-site-verification" content="VmXktAtuGPjL1S2ZWhC9DBmolaau0RA2HMceq0quTHY" />
   <link rel="canonical" href="https://akelecoder.netlify.app/" />
-  <meta property="og:title" content="Aakash Kumar Sahu • Akele Coder | Frontend Developer Portfolio" />
-  <meta property="og:description" content="Self-taught frontend developer from Chhattisgarh building clean, performant web experiences." />
+
+  <!-- ══ FAVICON — SVG (inline, no external file needed) ══════════ -->
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml" />
+  <link rel="alternate icon" href="images/favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" sizes="180x180" href="images/favicon.svg" />
+
+  <!-- ══ OPEN GRAPH (Facebook / WhatsApp / LinkedIn) ═════════════ -->
+  <meta property="og:title" content="Aakash Kumar Sahu | AkeleCoder — Frontend Developer" />
+  <meta property="og:description" content="BTech CSE student and self-taught frontend developer from Chhattisgarh, India. HTML · CSS · JavaScript." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://akelecoder.netlify.app/" />
   <meta property="og:image" content="https://akelecoder.netlify.app/images/og-preview.jpg" />
-  <meta property="og:site_name" content="Akele Coder" />
+  <meta property="og:site_name" content="AkeleCoder" />
+  <meta property="og:locale" content="en_IN" />
+
+  <!-- ══ TWITTER CARD ════════════════════════════════════════════ -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Aakash Kumar Sahu • Akele Coder | Frontend Developer" />
+  <meta name="twitter:title" content="Aakash Kumar Sahu | AkeleCoder — Frontend Developer" />
+  <meta name="twitter:description" content="BTech CSE student · Frontend Developer · Chhattisgarh, India" />
   <meta name="twitter:image" content="https://akelecoder.netlify.app/images/og-preview.jpg" />
 
-  <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
-  <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png" />
+  <!-- ══ STRUCTURED DATA (JSON-LD) — helps Google show rich results -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Aakash Kumar Sahu",
+    "alternateName": ["AkeleCoder", "Akele Coder", "Aakash Kumar", "Aakash Sahu"],
+    "jobTitle": "Frontend Developer",
+    "description": "BTech CSE student and self-taught frontend developer from Chhattisgarh, India",
+    "url": "https://akelecoder.netlify.app/",
+    "sameAs": ["https://github.com/AkeleCoder"],
+    "email": "aakashkumarrr.in@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressRegion": "Chhattisgarh",
+      "addressCountry": "IN"
+    },
+    "knowsAbout": ["HTML5", "CSS3", "JavaScript", "Responsive Design", "Git", "REST APIs"]
+  }
+  </script>
 
+  <!-- ══ THEME — set before paint to avoid flash ═════════════════ -->
+  <script>
+    (function() {
+      var saved = localStorage.getItem('theme');
+      var prefer = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', saved || prefer);
+    })();
+  </script>
+
+  <!-- Google Fonts: Poppins -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
   <link rel="stylesheet" href="css/style.css" />
 </head>
-
 <body>
 
-  <!-- ══ CURSOR (desktop only) ══════════════════════════ -->
-  <div class="cursor" id="cursor" aria-hidden="true"></div>
+  <!-- ==============================
+       NAVBAR
+  ============================== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
 
-  <!-- ══ HEADER ════════════════════════════════════════ -->
-  <header class="header" id="header">
-    <div class="wrap header-wrap">
+      <a href="#home" class="nav-logo">Akele<span>Coder</span></a>
 
-      <a href="#" class="logo" aria-label="AkeleCoder — home">
-        <span class="logo-mark">[</span>AkeleCoder<span class="logo-mark">]</span>
-      </a>
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="#home"     class="nav-link active">Home</a></li>
+        <li><a href="#about"    class="nav-link">About</a></li>
+        <li><a href="#skills"   class="nav-link">Skills</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#contact"  class="nav-link">Contact</a></li>
+      </ul>
 
-      <nav class="nav" id="nav" aria-label="Main navigation">
-        <a href="#about"    class="nav-link">About</a>
-        <a href="#projects" class="nav-link">Projects</a>
-        <a href="#contact"  class="nav-link">Contact</a>
-      </nav>
+      <!-- Hamburger (mobile only) -->
+      <button
+        class="hamburger"
+        id="hamburger"
+        aria-label="Toggle navigation menu"
+        aria-expanded="false"
+        aria-controls="nav-menu"
+      >
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
 
-      <div class="header-end">
-        <a href="mailto:aakashkumarrr.in@gmail.com" class="nav-hire">Hire Me</a>
-        <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false">
-          <span class="b-line"></span>
-          <span class="b-line"></span>
-          <span class="b-line"></span>
-        </button>
-      </div>
+      <!-- Dark / Light mode toggle -->
+      <button
+        class="theme-toggle"
+        id="theme-toggle"
+        aria-label="Toggle dark mode"
+        title="Toggle dark/light mode"
+      >
+        <!-- Sun icon (shown in dark mode) -->
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20" aria-hidden="true">
+          <circle cx="12" cy="12" r="5"/>
+          <line x1="12" y1="1" x2="12" y2="3"/>
+          <line x1="12" y1="21" x2="12" y2="23"/>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+          <line x1="1" y1="12" x2="3" y2="12"/>
+          <line x1="21" y1="12" x2="23" y2="12"/>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+        </svg>
+        <!-- Moon icon (shown in light mode) -->
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20" aria-hidden="true">
+          <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>
+        </svg>
+      </button>
 
     </div>
-  </header>
+  </nav>
 
-  <!-- ══ MOBILE NAV ════════════════════════════════════ -->
-  <div class="mnav" id="mnav" aria-hidden="true">
-    <div class="mnav-inner">
-      <a href="#about"    class="mnav-link"><em>01</em>About</a>
-      <a href="#projects" class="mnav-link"><em>02</em>Projects</a>
-      <a href="#contact"  class="mnav-link"><em>03</em>Contact</a>
-      <a href="mailto:aakashkumarrr.in@gmail.com" class="mnav-cta">
-        Let's Work Together
-        <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-      </a>
-    </div>
-  </div>
-  <div class="mnav-overlay" id="mnav-overlay"></div>
+  <!-- ==============================
+       HOME / HERO
+  ============================== -->
+  <section class="hero" id="home">
+    <div class="hero-container">
 
-  <!-- ══ HERO ══════════════════════════════════════════ -->
-  <section id="hero" class="hero">
-
-    <div class="hero-bg" aria-hidden="true">
-      <div class="hbg-blob hbg-1"></div>
-      <div class="hbg-blob hbg-2"></div>
-      <div class="hbg-blob hbg-3"></div>
-      <div class="hbg-grid"></div>
-      <div class="hbg-noise"></div>
-    </div>
-
-    <div class="wrap hero-wrap">
-
-      <!-- Text block -->
+      <!-- Text side -->
       <div class="hero-text">
-        <div class="h-badge" data-reveal>
-          <span class="h-badge-dot"></span>
-          Available for projects
-        </div>
-
-        <h1 class="h-name" data-reveal data-reveal-delay="1">
-          <span>Aakash</span>
-          <span class="h-name-accent">Kumar<span class="h-dot">.</span></span>
-        </h1>
-
-        <div class="h-role" data-reveal data-reveal-delay="2">
-          <span class="h-role-tag">Frontend Developer</span>
-          <span class="h-role-sep" aria-hidden="true">/</span>
-          <span class="h-loc">
-            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            Chhattisgarh, IN
-          </span>
-        </div>
-
-        <p class="h-lead" data-reveal data-reveal-delay="3">
-          I craft clean, fast web experiences with vanilla JavaScript — solid engineering meets sharp design.
+        <p class="hero-greeting">Hello, I'm</p>
+        <h1 class="hero-name">Aakash Kumar Sahu</h1>
+        <h2 class="hero-role">
+          I'm a <span id="typed-text"></span><span class="cursor-blink">|</span>
+        </h2>
+        <p class="hero-desc">
+          A self-taught frontend developer and BTech CSE student from Chhattisgarh, India.
+          I build clean and responsive websites using HTML, CSS and JavaScript.
         </p>
-
-        <div class="h-ctas" data-reveal data-reveal-delay="4">
-          <a href="#projects" class="btn-fill">
-            View Projects
-            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <div class="hero-btns">
+          <a href="#projects" class="btn btn-primary">View Projects</a>
+          <a href="#contact"  class="btn btn-outline">Contact Me</a>
+        </div>
+        <div class="hero-social">
+          <a href="https://github.com/AkeleCoder" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22" aria-hidden="true">
+              <path d="M12 2C6.48 2 2 6.58 2 12.26c0 4.54 2.87 8.39 6.84 9.75.5.09.68-.22.68-.49 0-.24-.01-.87-.01-1.71-2.78.62-3.37-1.37-3.37-1.37-.45-1.18-1.11-1.5-1.11-1.5-.91-.64.07-.62.07-.62 1 .07 1.53 1.06 1.53 1.06.89 1.57 2.34 1.12 2.91.86.09-.67.35-1.12.63-1.38-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.71 0 0 .84-.27 2.75 1.05A9.38 9.38 0 0112 7.43a9.38 9.38 0 012.51.35c1.9-1.32 2.74-1.05 2.74-1.05.55 1.41.2 2.45.1 2.71.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.81-4.57 5.06.36.32.68.94.68 1.9 0 1.38-.01 2.49-.01 2.82 0 .27.18.59.69.49A10.27 10.27 0 0022 12.26C22 6.58 17.52 2 12 2z"/>
+            </svg>
           </a>
-          <a href="#contact" class="btn-line">Say Hello</a>
+          <a href="mailto:aakashkumarrr.in@gmail.com" aria-label="Send email">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22" aria-hidden="true">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+              <polyline points="22,6 12,13 2,6"/>
+            </svg>
+          </a>
         </div>
       </div>
 
-      <!-- Code card (shows on ≥ 768px) -->
-      <div class="hero-card" data-reveal data-reveal-delay="3" aria-hidden="true">
-        <div class="hcard-bar">
-          <span class="hcard-dot hcd-r"></span>
-          <span class="hcard-dot hcd-y"></span>
-          <span class="hcard-dot hcd-g"></span>
-          <span class="hcard-title">portfolio.js</span>
+      <!-- Photo side -->
+      <div class="hero-image">
+        <div class="hero-img-box">
+          <img src="images/profile.jpg" alt="Aakash Kumar Sahu — frontend developer" />
         </div>
-        <pre class="hcard-code"><span class="c-kw">const</span> <span class="c-id">dev</span> <span class="c-op">=</span> <span class="c-br">{</span>
-  <span class="c-key">name</span><span class="c-op">:</span>  <span class="c-str">"Aakash Kumar"</span><span class="c-p">,</span>
-  <span class="c-key">role</span><span class="c-op">:</span>  <span class="c-str">"Frontend Dev"</span><span class="c-p">,</span>
-  <span class="c-key">stack</span><span class="c-op">:</span> <span class="c-br">[</span>
-    <span class="c-str">"HTML5"</span><span class="c-p">,</span>
-    <span class="c-str">"CSS3"</span><span class="c-p">,</span>
-    <span class="c-str">"JavaScript"</span>
-  <span class="c-br">]</span><span class="c-p">,</span>
-  <span class="c-key">status</span><span class="c-op">:</span> <span class="c-str c-blink">"open to work ✦"</span>
-<span class="c-br">}</span><span class="c-p">;</span></pre>
-        <div class="hcard-badge hcb-1">⚡ Fast</div>
-        <div class="hcard-badge hcb-2">✦ Clean</div>
       </div>
 
     </div>
-
-    <!-- Scrolling tech marquee -->
-    <div class="marquee-wrap" aria-hidden="true">
-      <div class="marquee-track">
-        <span>HTML5</span><i>·</i><span>CSS3</span><i>·</i><span>JavaScript</span><i>·</i>
-        <span>Responsive Design</span><i>·</i><span>API Integration</span><i>·</i>
-        <span>Git &amp; GitHub</span><i>·</i><span>Performance</span><i>·</i><span>Accessibility</span><i>·</i>
-        <!-- duplicate for seamless -->
-        <span>HTML5</span><i>·</i><span>CSS3</span><i>·</i><span>JavaScript</span><i>·</i>
-        <span>Responsive Design</span><i>·</i><span>API Integration</span><i>·</i>
-        <span>Git &amp; GitHub</span><i>·</i><span>Performance</span><i>·</i><span>Accessibility</span><i>·</i>
-      </div>
-    </div>
-
   </section>
 
-  <!-- ══ ABOUT ══════════════════════════════════════════ -->
-  <section id="about" class="section about">
-    <div class="wrap">
+  <!-- ==============================
+       ABOUT
+  ============================== -->
+  <section class="about section" id="about">
+    <div class="container">
+      <h2 class="section-title">About <span>Me</span></h2>
+      <p class="section-sub">Get to know me better</p>
+
       <div class="about-grid">
 
-        <!-- Photo -->
-        <div class="about-photo" data-reveal>
-          <div class="aphoto-wrap">
-            <div class="aphoto-deco" aria-hidden="true"></div>
-            <img src="images/profile.jpg" alt="Aakash Kumar Sahu" loading="lazy" class="aphoto-img" />
-            <div class="aphoto-stat as-1">
-              <b>15+</b><span>Projects</span>
-            </div>
-            <div class="aphoto-stat as-2">
-              <b>2+</b><span>Years</span>
-            </div>
-          </div>
+        <div class="about-img">
+          <img src="images/profile.jpg" alt="Aakash Kumar Sahu" loading="lazy" />
         </div>
 
-        <!-- Text -->
-        <div class="about-body">
-          <div class="sec-label" data-reveal>01 — About</div>
-          <h2 class="sec-title" data-reveal data-reveal-delay="1">
-            Building things<br><em>people love to use</em>
-          </h2>
-          <div class="about-copy" data-reveal data-reveal-delay="2">
-            <p>Self-taught frontend developer from Chhattisgarh, India. I believe great web development is about more than writing code — it's about crafting experiences that feel fast, intuitive, and genuinely useful.</p>
-            <p>Focused on vanilla JavaScript, semantic HTML, modern CSS, and thoughtful UX. Always learning, always building.</p>
+        <div class="about-info">
+          <h3>Hi there! I'm Aakash 👋</h3>
+          <p>
+            I'm a <strong>BTech CSE 1st year student</strong> and self-taught frontend developer
+            from <strong>Chhattisgarh, India</strong>. I started learning web development on my own
+            and fell in love with building things for the web.
+          </p>
+          <p>
+            I focus on writing clean, readable code and building projects that actually work.
+            Always learning, always improving.
+          </p>
+
+          <div class="about-details">
+            <div class="detail-item">
+              <span class="detail-label">Name</span>
+              <span class="detail-value">Aakash Kumar Sahu</span>
+            </div>
+            <div class="detail-item">
+              <span class="detail-label">Degree</span>
+              <span class="detail-value">B.Tech CSE (1st Year)</span>
+            </div>
+            <div class="detail-item">
+              <span class="detail-label">Location</span>
+              <span class="detail-value">Chhattisgarh, India</span>
+            </div>
+            <div class="detail-item">
+              <span class="detail-label">Email</span>
+              <span class="detail-value">aakashkumarrr.in@gmail.com</span>
+            </div>
           </div>
 
-          <div class="chips" data-reveal data-reveal-delay="3">
-            <span class="chip"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>HTML5 &amp; CSS3</span>
-            <span class="chip"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>JS ES6+</span>
-            <span class="chip"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>Responsive</span>
-            <span class="chip"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>APIs</span>
-            <span class="chip"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>Git &amp; GitHub</span>
-            <span class="chip"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/></svg>Performance</span>
-          </div>
+          <a href="#contact" class="btn btn-primary about-btn">Hire Me</a>
         </div>
 
       </div>
     </div>
   </section>
 
-  <!-- ══ PROJECTS ═══════════════════════════════════════ -->
-  <section id="projects" class="section projects">
-    <div class="wrap">
-      <div class="sec-label" data-reveal>02 — Work</div>
-      <h2 class="sec-title" data-reveal data-reveal-delay="1">Selected Projects</h2>
+  <!-- ==============================
+       SKILLS
+  ============================== -->
+  <section class="skills section" id="skills">
+    <div class="container">
+      <h2 class="section-title">My <span>Skills</span></h2>
+      <p class="section-sub">Technologies I work with</p>
 
-      <div id="project-loading" class="proj-loading">
-        <div class="loading-dots"><span></span><span></span><span></span></div>
-        <p>Fetching projects…</p>
-      </div>
+      <div class="skills-grid">
 
-      <div id="project-container" class="proj-grid" style="display:none;"></div>
+        <div class="skill-card">
+          <div class="skill-icon html-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="36" height="36" aria-hidden="true"><path d="M1.5 0h21l-1.91 21.563L11.977 24l-8.564-2.438L1.5 0zm7.031 9.75l-.232-2.718 10.059.003.23-2.622L5.412 4.41l.698 8.01h9.126l-.326 3.426-2.91.804-2.955-.81-.188-2.11H6.248l.33 4.171L12 19.351l5.379-1.443.744-8.157H8.531z"/></svg>
+          </div>
+          <h4>HTML5</h4>
+          <div class="skill-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" aria-label="HTML5 skill level 90%">
+            <div class="skill-fill" style="--w: 90%"></div>
+          </div>
+          <span class="skill-percent">90%</span>
+        </div>
 
-      <div id="project-error" class="proj-error" style="display:none;">
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
-        <p>Failed to load projects. Please refresh.</p>
+        <div class="skill-card">
+          <div class="skill-icon css-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="36" height="36" aria-hidden="true"><path d="M1.5 0h21l-1.91 21.563L11.977 24l-8.565-2.438L1.5 0zm17.09 4.413L5.41 4.41l.213 2.622 10.125.003-.255 2.716h-6.64l.24 2.573h6.182l-.366 3.523-2.91.804-2.956-.81-.188-2.11h-2.61l.29 3.855L12 19.288l5.373-1.53L18.59 4.413z"/></svg>
+          </div>
+          <h4>CSS3</h4>
+          <div class="skill-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" aria-label="CSS3 skill level 85%">
+            <div class="skill-fill" style="--w: 85%"></div>
+          </div>
+          <span class="skill-percent">85%</span>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-icon js-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="36" height="36" aria-hidden="true"><path d="M0 0h24v24H0V0zm22.034 18.276c-.175-1.095-.888-2.015-3.003-2.873-.736-.345-1.554-.585-1.797-1.14-.091-.33-.105-.51-.046-.705.15-.646.915-.84 1.515-.66.39.12.75.42.976.9 1.034-.676 1.034-.676 1.755-1.125-.27-.42-.404-.601-.586-.78-.63-.705-1.469-1.065-2.834-1.034l-.705.089c-.676.165-1.32.525-1.71 1.005-1.14 1.291-.811 3.541.569 4.471 1.365 1.02 3.361 1.244 3.616 2.205.24 1.17-.87 1.545-1.966 1.41-.811-.18-1.26-.586-1.755-1.336l-1.83 1.051c.21.48.45.689.81 1.109 1.74 1.756 6.09 1.666 6.871-1.004.029-.09.24-.705.074-1.65l.046.067zm-8.983-7.245h-2.248c0 1.938-.009 3.864-.009 5.805 0 1.232.063 2.363-.138 2.711-.33.689-1.18.601-1.566.48-.396-.196-.597-.466-.83-.855-.063-.105-.11-.196-.127-.196l-1.825 1.125c.305.63.75 1.172 1.324 1.517.855.51 2.004.675 3.207.405.783-.226 1.458-.691 1.811-1.411.51-.93.402-2.07.397-3.346.012-2.054 0-4.109 0-6.179l.004-.056z"/></svg>
+          </div>
+          <h4>JavaScript</h4>
+          <div class="skill-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" aria-label="JavaScript skill level 75%">
+            <div class="skill-fill" style="--w: 75%"></div>
+          </div>
+          <span class="skill-percent">75%</span>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-icon git-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="36" height="36" aria-hidden="true"><path d="M23.546 10.93L13.067.452c-.604-.603-1.582-.603-2.188 0L8.708 2.627l2.76 2.76c.645-.215 1.379-.07 1.889.441.516.515.658 1.258.438 1.9l2.658 2.66c.645-.223 1.387-.078 1.9.435.721.72.721 1.884 0 2.604-.719.719-1.881.719-2.6 0-.539-.541-.674-1.337-.404-1.996L12.86 8.955v6.525c.176.086.342.203.488.348.713.721.713 1.883 0 2.6-.719.721-1.889.721-2.609 0-.719-.719-.719-1.879 0-2.598.182-.18.387-.316.605-.406V8.835c-.217-.091-.424-.222-.6-.401-.545-.545-.676-1.342-.396-2.009L7.636 3.7.45 10.881c-.6.605-.6 1.584 0 2.189l10.48 10.477c.604.604 1.582.604 2.186 0l10.43-10.43c.605-.603.605-1.582 0-2.187"/></svg>
+          </div>
+          <h4>Git &amp; GitHub</h4>
+          <div class="skill-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" aria-label="Git and GitHub skill level 70%">
+            <div class="skill-fill" style="--w: 70%"></div>
+          </div>
+          <span class="skill-percent">70%</span>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-icon resp-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="36" height="36" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+          </div>
+          <h4>Responsive Design</h4>
+          <div class="skill-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" aria-label="Responsive Design skill level 80%">
+            <div class="skill-fill" style="--w: 80%"></div>
+          </div>
+          <span class="skill-percent">80%</span>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-icon api-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="36" height="36" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+          </div>
+          <h4>REST APIs</h4>
+          <div class="skill-bar" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100" aria-label="REST APIs skill level 65%">
+            <div class="skill-fill" style="--w: 65%"></div>
+          </div>
+          <span class="skill-percent">65%</span>
+        </div>
+
       </div>
     </div>
   </section>
 
-  <!-- ══ CONTACT ════════════════════════════════════════ -->
-  <section id="contact" class="section contact">
-    <div class="wrap">
+  <!-- ==============================
+       PROJECTS
+  ============================== -->
+  <section class="projects section" id="projects">
+    <div class="container">
+      <h2 class="section-title">My <span>Projects</span></h2>
+      <p class="section-sub">Things I have built</p>
+
+      <div id="project-loading" class="loading-wrap">
+        <div class="loader"></div>
+        <p>Loading projects...</p>
+      </div>
+
+      <div id="project-container" class="projects-grid" style="display: none;"></div>
+
+      <div id="project-error" class="error-msg" style="display: none;">
+        <p>Could not load projects. Please refresh the page.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==============================
+       CONTACT
+  ============================== -->
+  <section class="contact section" id="contact">
+    <div class="container">
+      <h2 class="section-title">Contact <span>Me</span></h2>
+      <p class="section-sub">Let's get in touch</p>
+
       <div class="contact-grid">
 
-        <div class="contact-left" data-reveal>
-          <div class="sec-label">03 — Contact</div>
-          <h2 class="sec-title">
-            Let's build<br><em>something great</em>
-          </h2>
-          <p class="contact-sub">Open to freelance, interesting projects, or a great conversation about the web.</p>
+        <!-- Contact info -->
+        <div class="contact-info">
+
+          <div class="contact-item">
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div class="contact-text">
+              <h4>Location</h4>
+              <p>Chhattisgarh, India</p>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <div class="contact-text">
+              <h4>Email</h4>
+              <p>aakashkumarrr.in@gmail.com</p>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22" aria-hidden="true"><path d="M12 2C6.48 2 2 6.58 2 12.26c0 4.54 2.87 8.39 6.84 9.75.5.09.68-.22.68-.49 0-.24-.01-.87-.01-1.71-2.78.62-3.37-1.37-3.37-1.37-.45-1.18-1.11-1.5-1.11-1.5-.91-.64.07-.62.07-.62 1 .07 1.53 1.06 1.53 1.06.89 1.57 2.34 1.12 2.91.86.09-.67.35-1.12.63-1.38-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.71 0 0 .84-.27 2.75 1.05A9.38 9.38 0 0112 7.43a9.38 9.38 0 012.51.35c1.9-1.32 2.74-1.05 2.74-1.05.55 1.41.2 2.45.1 2.71.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.81-4.57 5.06.36.32.68.94.68 1.9 0 1.38-.01 2.49-.01 2.82 0 .27.18.59.69.49A10.27 10.27 0 0022 12.26C22 6.58 17.52 2 12 2z"/></svg>
+            </div>
+            <div class="contact-text">
+              <h4>GitHub</h4>
+              <p>github.com/AkeleCoder</p>
+            </div>
+          </div>
+
         </div>
 
-        <div class="contact-right" data-reveal data-reveal-delay="1">
-          <a href="mailto:aakashkumarrr.in@gmail.com" class="ccard">
-            <div class="ccard-icon">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-            </div>
-            <div class="ccard-body">
-              <span class="ccard-lbl">Email</span>
-              <span class="ccard-val">aakashkumarrr.in@gmail.com</span>
-            </div>
-            <svg class="ccard-arr" width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-          </a>
+        <!-- Contact form
+             HOW TO ACTIVATE:
+             1. Go to formspree.io → sign up free → create a new form
+             2. Copy your endpoint, e.g. https://formspree.io/f/xyzabc12
+             3. Replace YOUR_FORMSPREE_ID below with your real ID
+        -->
+        <form
+          class="contact-form"
+          id="contact-form"
+          action="https://formspree.io/f/mqeydaez"
+          method="POST"
+          novalidate
+        >
 
-          <a href="https://github.com/AkeleCoder" target="_blank" rel="noopener noreferrer" class="ccard">
-            <div class="ccard-icon">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
-            </div>
-            <div class="ccard-body">
-              <span class="ccard-lbl">GitHub</span>
-              <span class="ccard-val">@AkeleCoder</span>
-            </div>
-            <svg class="ccard-arr" width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-          </a>
+          <div class="form-group">
+            <label for="input-name">Your Name <span class="required">*</span></label>
+            <input
+              type="text"
+              id="input-name"
+              name="name"
+              placeholder="e.g. Rahul Sharma"
+              required
+            />
+          </div>
 
-          <a href="mailto:aakashkumarrr.in@gmail.com" class="ccard-big">
-            Start a conversation
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-          </a>
-        </div>
+          <div class="form-group">
+            <label for="input-email">Your Email <span class="required">*</span></label>
+            <input
+              type="email"
+              id="input-email"
+              name="email"
+              placeholder="e.g. rahul@gmail.com"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="input-subject">Subject</label>
+            <input
+              type="text"
+              id="input-subject"
+              name="subject"
+              placeholder="e.g. Freelance Project"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="input-message">Message <span class="required">*</span></label>
+            <textarea
+              id="input-message"
+              name="message"
+              rows="5"
+              placeholder="Write your message here..."
+              required
+            ></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-full" id="submit-btn">
+            Send Message
+          </button>
+
+          <!-- Status messages (shown by JS) -->
+          <p class="form-success" id="form-success">
+            ✅ Message sent! I will get back to you soon.
+          </p>
+          <p class="form-error" id="form-error">
+            ❌ Something went wrong. Please email me directly.
+          </p>
+
+        </form>
 
       </div>
     </div>
   </section>
 
-  <!-- ══ FOOTER ════════════════════════════════════════ -->
+  <!-- ==============================
+       FOOTER
+  ============================== -->
   <footer class="footer">
-    <div class="wrap footer-inner">
-      <a href="#" class="footer-logo"><span class="logo-mark">[</span>AkeleCoder<span class="logo-mark">]</span></a>
-      <p class="footer-copy">© <script>document.write(new Date().getFullYear())</script> Aakash Kumar Sahu · Vanilla JS</p>
-      <a href="#hero" class="footer-up" aria-label="Back to top">
-        <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 13V3M4 7l4-4 4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-      </a>
+    <div class="container footer-inner">
+      <p class="footer-copy">
+        &copy; <span id="year"></span> Aakash Kumar Sahu &nbsp;|&nbsp; Made with ❤️ using HTML, CSS &amp; JS
+      </p>
+      <div class="footer-social">
+        <a href="https://github.com/AkeleCoder" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20" aria-hidden="true">
+            <path d="M12 2C6.48 2 2 6.58 2 12.26c0 4.54 2.87 8.39 6.84 9.75.5.09.68-.22.68-.49 0-.24-.01-.87-.01-1.71-2.78.62-3.37-1.37-3.37-1.37-.45-1.18-1.11-1.5-1.11-1.5-.91-.64.07-.62.07-.62 1 .07 1.53 1.06 1.53 1.06.89 1.57 2.34 1.12 2.91.86.09-.67.35-1.12.63-1.38-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.71 0 0 .84-.27 2.75 1.05A9.38 9.38 0 0112 7.43a9.38 9.38 0 012.51.35c1.9-1.32 2.74-1.05 2.74-1.05.55 1.41.2 2.45.1 2.71.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.81-4.57 5.06.36.32.68.94.68 1.9 0 1.38-.01 2.49-.01 2.82 0 .27.18.59.69.49A10.27 10.27 0 0022 12.26C22 6.58 17.52 2 12 2z"/>
+          </svg>
+        </a>
+        <a href="mailto:aakashkumarrr.in@gmail.com" aria-label="Email">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20" aria-hidden="true">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+            <polyline points="22,6 12,13 2,6"/>
+          </svg>
+        </a>
+      </div>
     </div>
   </footer>
 
+  <!-- All JS in one file -->
   <script src="js/script.js"></script>
-  <script>
-  (() => {
-    // ── Header hide-on-scroll ──────────────────────────
-    const header = document.getElementById('header');
-    let lastY = 0;
-    window.addEventListener('scroll', () => {
-      const y = window.scrollY;
-      header.classList.toggle('scrolled', y > 50);
-      header.classList.toggle('header-hide', y > lastY + 8 && y > 150);
-      header.classList.toggle('header-show', y < lastY - 8);
-      lastY = y;
-    }, { passive: true });
 
-    // ── Mobile menu ────────────────────────────────────
-    const burger  = document.getElementById('burger');
-    const mnav    = document.getElementById('mnav');
-    const overlay = document.getElementById('mnav-overlay');
-
-    const openM = () => {
-      burger.classList.add('open'); burger.setAttribute('aria-expanded','true');
-      mnav.classList.add('open');   mnav.setAttribute('aria-hidden','false');
-      overlay.classList.add('open');
-      document.body.style.overflow = 'hidden';
-    };
-    const closeM = () => {
-      burger.classList.remove('open'); burger.setAttribute('aria-expanded','false');
-      mnav.classList.remove('open');   mnav.setAttribute('aria-hidden','true');
-      overlay.classList.remove('open');
-      document.body.style.overflow = '';
-    };
-    burger.addEventListener('click', () =>
-      burger.classList.contains('open') ? closeM() : openM()
-    );
-    overlay.addEventListener('click', closeM);
-    mnav.querySelectorAll('a').forEach(a => a.addEventListener('click', closeM));
-
-    // ── Scroll reveal ──────────────────────────────────
-    const els = document.querySelectorAll('[data-reveal]');
-    new IntersectionObserver((entries) => {
-      entries.forEach(e => {
-        if (!e.isIntersecting) return;
-        const d = +(e.target.dataset.revealDelay || 0);
-        setTimeout(() => e.target.classList.add('revealed'), d * 90);
-        io.unobserve(e.target);
-      });
-    }, { threshold: 0.1, rootMargin: '0px 0px -32px 0px' }).observe(
-      ...Array.from(els)
-    );
-    // fix: use forEach
-    const io2 = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
-        if (!e.isIntersecting) return;
-        const d = +(e.target.dataset.revealDelay || 0);
-        setTimeout(() => e.target.classList.add('revealed'), d * 90);
-        io2.unobserve(e.target);
-      });
-    }, { threshold: 0.1, rootMargin: '0px 0px -32px 0px' });
-    els.forEach(el => io2.observe(el));
-
-    // ── Custom cursor ──────────────────────────────────
-    const cursor = document.getElementById('cursor');
-    if (window.matchMedia('(pointer:fine)').matches) {
-      let mx=-100,my=-100,cx=-100,cy=-100;
-      window.addEventListener('mousemove', e => { mx=e.clientX; my=e.clientY; }, { passive:true });
-      (function raf() {
-        cx += (mx-cx)*0.15; cy += (my-cy)*0.15;
-        cursor.style.transform = `translate(${cx}px,${cy}px) translate(-50%,-50%)`;
-        requestAnimationFrame(raf);
-      })();
-      document.querySelectorAll('a,button').forEach(el => {
-        el.addEventListener('mouseenter', () => cursor.classList.add('big'));
-        el.addEventListener('mouseleave', () => cursor.classList.remove('big'));
-      });
-    } else {
-      cursor.style.display = 'none';
-    }
-
-    // ── Chips stagger var ──────────────────────────────
-    document.querySelectorAll('.chip').forEach((c,i) =>
-      c.style.setProperty('--ci', i)
-    );
-  })();
-  </script>
 </body>
 </html>

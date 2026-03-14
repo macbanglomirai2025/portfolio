@@ -1,158 +1,356 @@
-// js/script.js — Portfolio project loader
+// ============================================================
+//  script.js — AkeleCoder Portfolio
+//  Contains:
+//    1. Navbar scroll + active link highlight
+//    2. Hamburger mobile menu
+//    3. Typing animation (hero section)
+//    4. Skill bar animation on scroll
+//    5. Section fade-in on scroll
+//    6. Contact form → Formspree (async fetch)
+//    7. Project cards loader (from data/projects.json)
+// ============================================================
 
 document.addEventListener('DOMContentLoaded', () => {
-  const container      = document.getElementById('project-container');
-  const loadingElement = document.getElementById('project-loading');
-  const errorElement   = document.getElementById('project-error');
 
-  if (!container) {
-    console.error('Project container not found');
-    return;
+  // ── Set footer year
+  const yearEl = document.getElementById('year');
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+  // ── Dark / Light theme toggle ─────────────────────────────────────
+  const themeToggle = document.getElementById('theme-toggle');
+  const root        = document.documentElement;
+
+  function setTheme(theme) {
+    root.setAttribute('data-theme', theme);
+    localStorage.setItem('theme', theme);
   }
 
-  // ── Helpers ────────────────────────────────────────────
+  if (themeToggle) {
+    themeToggle.addEventListener('click', () => {
+      const current = root.getAttribute('data-theme');
+      setTheme(current === 'dark' ? 'light' : 'dark');
+    });
+  }
 
+
+  // ─────────────────────────────────────────────
+  // 1. NAVBAR — add shadow when page is scrolled
+  // ─────────────────────────────────────────────
+  const navbar = document.getElementById('navbar');
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
+    }
+  }, { passive: true });
+
+
+  // ─────────────────────────────────────────────
+  // 2. NAVBAR — highlight active link on scroll
+  // ─────────────────────────────────────────────
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-link');
+
+  window.addEventListener('scroll', () => {
+    let current = '';
+
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop - 90;
+      if (window.scrollY >= sectionTop) {
+        current = section.getAttribute('id');
+      }
+    });
+
+    navLinks.forEach(link => {
+      link.classList.remove('active');
+      if (link.getAttribute('href') === '#' + current) {
+        link.classList.add('active');
+      }
+    });
+  }, { passive: true });
+
+
+  // ─────────────────────────────────────────────
+  // 3. HAMBURGER — toggle mobile menu
+  // ─────────────────────────────────────────────
+  const hamburger = document.getElementById('hamburger');
+  const navMenu   = document.getElementById('nav-menu');
+
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    navMenu.classList.toggle('active');
+  });
+
+  // Close menu when a link is clicked
+  navMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      hamburger.classList.remove('active');
+      navMenu.classList.remove('active');
+    });
+  });
+
+
+  // ─────────────────────────────────────────────
+  // 4. TYPING ANIMATION — hero section
+  // ─────────────────────────────────────────────
+  const typedEl = document.getElementById('typed-text');
+
+  if (typedEl) {
+    const words    = ['Frontend Developer', 'Web Designer', 'JavaScript Enthusiast', 'BTech CSE Student'];
+    let wordIndex  = 0;
+    let charIndex  = 0;
+    let isDeleting = false;
+
+    function type() {
+      const currentWord = words[wordIndex];
+
+      if (isDeleting) {
+        typedEl.textContent = currentWord.slice(0, charIndex - 1);
+        charIndex--;
+      } else {
+        typedEl.textContent = currentWord.slice(0, charIndex + 1);
+        charIndex++;
+      }
+
+      // Word fully typed — pause then start deleting
+      if (!isDeleting && charIndex === currentWord.length) {
+        isDeleting = true;
+        setTimeout(type, 1500);
+        return;
+      }
+
+      // Word fully deleted — move to next word
+      if (isDeleting && charIndex === 0) {
+        isDeleting = false;
+        wordIndex  = (wordIndex + 1) % words.length;
+      }
+
+      const speed = isDeleting ? 60 : 100;
+      setTimeout(type, speed);
+    }
+
+    type();
+  }
+
+
+  // ─────────────────────────────────────────────
+  // 5. SKILL BARS — animate width on scroll
+  // ─────────────────────────────────────────────
+  const skillFills = document.querySelectorAll('.skill-fill');
+
+  // Start all bars at 0 width
+  skillFills.forEach(bar => {
+    bar.style.width = '0';
+  });
+
+  const skillObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        // Set width to the value stored in --w CSS variable
+        entry.target.style.width = entry.target.style.getPropertyValue('--w');
+        skillObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.3 });
+
+  skillFills.forEach(bar => skillObserver.observe(bar));
+
+
+  // ─────────────────────────────────────────────
+  // 6. SCROLL REVEAL — fade in sections
+  // ─────────────────────────────────────────────
+  const fadeElements = document.querySelectorAll('.section, .hero');
+
+  const fadeObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        fadeObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08 });
+
+  fadeElements.forEach(el => fadeObserver.observe(el));
+
+
+  // ─────────────────────────────────────────────
+  // 7. CONTACT FORM → FORMSPREE
+  //
+  //    HOW TO SET UP:
+  //    1. Go to https://formspree.io and sign up free
+  //    2. Create a new form, copy your endpoint
+  //       e.g.  https://formspree.io/f/xyzabc12
+  //    3. In index.html find the <form> tag and replace
+  //       YOUR_FORMSPREE_ID with your actual ID
+  //       e.g.  action="https://formspree.io/f/xyzabc12"
+  //    Done! Messages will arrive in your Gmail inbox.
+  // ─────────────────────────────────────────────
+  const contactForm = document.getElementById('contact-form');
+  const submitBtn   = document.getElementById('submit-btn');
+  const successMsg  = document.getElementById('form-success');
+  const errorMsg    = document.getElementById('form-error');
+
+  if (contactForm) {
+    contactForm.addEventListener('submit', async function (e) {
+      e.preventDefault();
+
+      // Check the user has replaced the placeholder ID
+      if (contactForm.action.includes('YOUR_FORMSPREE_ID')) {
+        alert('⚠️ Please set up Formspree first!\nReplace YOUR_FORMSPREE_ID in index.html with your real Formspree endpoint.');
+        return;
+      }
+
+      // Show loading state
+      submitBtn.textContent = 'Sending...';
+      submitBtn.disabled    = true;
+      successMsg.style.display = 'none';
+      errorMsg.style.display   = 'none';
+
+      try {
+        const response = await fetch(contactForm.action, {
+          method:  'POST',
+          body:    new FormData(contactForm),
+          headers: { 'Accept': 'application/json' }
+        });
+
+        if (response.ok) {
+          // ✅ Message sent successfully
+          successMsg.style.display = 'block';
+          errorMsg.style.display   = 'none';
+          contactForm.reset();
+        } else {
+          // ❌ Formspree returned an error
+          const data = await response.json();
+          console.error('Formspree error:', data);
+          successMsg.style.display = 'none';
+          errorMsg.style.display   = 'block';
+        }
+
+      } catch (err) {
+        // ❌ Network / connection error
+        console.error('Network error:', err);
+        errorMsg.style.display = 'block';
+      }
+
+      // Restore button
+      submitBtn.textContent = 'Send Message';
+      submitBtn.disabled    = false;
+    });
+  }
+
+
+  // ─────────────────────────────────────────────
+  // 8. PROJECT CARDS — load from data/projects.json
+  // ─────────────────────────────────────────────
+  const projectContainer = document.getElementById('project-container');
+  const projectLoading   = document.getElementById('project-loading');
+  const projectError     = document.getElementById('project-error');
+
+  if (!projectContainer) return;
+
+  // Escape HTML to prevent XSS
   function escHtml(str) {
     return String(str ?? '')
-      .replace(/&/g, '&amp;')
-      .replace(/</g, '&lt;')
-      .replace(/>/g, '&gt;')
-      .replace(/"/g, '&quot;');
+      .replace(/&/g,  '&amp;')
+      .replace(/</g,  '&lt;')
+      .replace(/>/g,  '&gt;')
+      .replace(/"/g,  '&quot;');
   }
 
-  // Build a single card element
+  // Build a single project card
   function buildCard(project, index) {
-    const card = document.createElement('article');
+    const card = document.createElement('div');
     card.className = 'project-card';
 
-    // Staggered entrance — CSS handles the animation via --i
-    card.style.setProperty('--i', index);
-    card.style.opacity = '0';
-    card.style.transform = 'translateY(24px)';
+    const name   = escHtml(project.name        || 'Project');
+    const desc   = escHtml(project.description || '');
+    const imgSrc = escHtml(project.image       || '');
+    const live   = escHtml(project.live        || '');
+    const github = escHtml(project.github      || '');
 
-    const imageSrc   = escHtml(project.image  || 'images/placeholder-project.jpg');
-    const liveLink   = escHtml(project.live   || '#');
-    const githubLink = escHtml(project.github || '#');
-    const name       = escHtml(project.name   || 'Unnamed Project');
-    const desc       = escHtml(project.description || 'No description available.');
-
-    // Tech tags (optional field)
-    const techTags = Array.isArray(project.tech) && project.tech.length
-      ? `<div class="project-tags">${project.tech.map(t => `<span class="project-tag">${escHtml(t)}</span>`).join('')}</div>`
+    // Tech tags
+    const tags = Array.isArray(project.tech) && project.tech.length
+      ? project.tech.map(t => `<span class="card-tag">${escHtml(t)}</span>`).join('')
       : '';
 
-    // Only render links that aren't '#'
-    const liveBtn = project.live
-      ? `<a href="${liveLink}" target="_blank" rel="noopener noreferrer" class="proj-link proj-link--live" aria-label="Live demo of ${name}">
-           <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-             <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/>
-             <polyline points="15 3 21 3 21 9"/>
-             <line x1="10" y1="14" x2="21" y2="3"/>
-           </svg>
-           Live Demo
-         </a>`
+    // Thumbnail
+    const imgHtml = imgSrc
+      ? `<div class="project-card-img">
+           <img
+             src="${imgSrc}"
+             alt="${name}"
+             loading="lazy"
+             onerror="this.parentElement.innerHTML='<span>No preview</span>';
+                      this.parentElement.classList.add('no-img');"
+           />
+         </div>`
+      : `<div class="project-card-img no-img"><span>No preview</span></div>`;
+
+    // Buttons
+    const liveBtn = live
+      ? `<a href="${live}" target="_blank" rel="noopener noreferrer" class="card-link card-link-live">Live Demo</a>`
       : '';
 
-    const githubBtn = project.github
-      ? `<a href="${githubLink}" target="_blank" rel="noopener noreferrer" class="proj-link proj-link--code" aria-label="GitHub repository for ${name}">
-           <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-             <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/>
-           </svg>
-           Source Code
-         </a>`
+    const sourceBtn = github
+      ? `<a href="${github}" target="_blank" rel="noopener noreferrer" class="card-link card-link-code">Source Code</a>`
       : '';
 
     card.innerHTML = `
-      <div class="project-img-wrap">
-        <img
-          src="${imageSrc}"
-          alt="${name} screenshot"
-          loading="lazy"
-          class="project-img"
-          onerror="this.closest('.project-img-wrap').classList.add('img-error')"
-        />
-        <div class="project-img-overlay" aria-hidden="true"></div>
-      </div>
-      <div class="project-card-content">
-        <h3 class="project-name">${name}</h3>
-        <p class="project-desc">${desc}</p>
-        ${techTags}
-        <div class="project-links">
-          ${liveBtn}
-          ${githubBtn}
-        </div>
-      </div>
-    `;
+      ${imgHtml}
+      <div class="card-body">
+        <h3>${name}</h3>
+        <p>${desc}</p>
+        ${tags ? `<div class="card-tags">${tags}</div>` : ''}
+        <div class="card-links">${liveBtn}${sourceBtn}</div>
+      </div>`;
+
+    // Stagger the reveal animation using IntersectionObserver
+    const cardObserver = new IntersectionObserver(([entry]) => {
+      if (!entry.isIntersecting) return;
+      setTimeout(() => card.classList.add('show'), index * 100);
+      cardObserver.disconnect();
+    }, { threshold: 0.08 });
+
+    cardObserver.observe(card);
 
     return card;
   }
 
-  // ── Animate cards in after append ──────────────────────
-
-  function animateCards() {
-    const cards = container.querySelectorAll('.project-card');
-    cards.forEach((card, i) => {
-      setTimeout(() => {
-        card.style.transition = 'opacity 0.5s ease, transform 0.5s cubic-bezier(0.25,0.46,0.45,0.94)';
-        card.style.opacity    = '1';
-        card.style.transform  = 'translateY(0)';
-      }, i * 100);
-    });
-  }
-
-  // ── Main loader ─────────────────────────────────────────
-
+  // Fetch projects.json and render cards
   async function loadProjects() {
     try {
-      if (loadingElement) loadingElement.style.display = 'block';
+      projectLoading.style.display = 'flex';
 
       const response = await fetch('data/projects.json');
 
       if (!response.ok) {
-        throw new Error(`HTTP ${response.status}: Could not fetch projects.`);
+        throw new Error(`HTTP error: ${response.status}`);
       }
 
       const projects = await response.json();
-
-      if (loadingElement) loadingElement.style.display = 'none';
+      projectLoading.style.display = 'none';
 
       if (!Array.isArray(projects) || projects.length === 0) {
-        container.innerHTML = `
-          <p style="grid-column:1/-1; text-align:center; color:var(--text-muted, #8892a4); font-size:1rem; padding:3rem 0;">
-            No projects yet — check back soon!
-          </p>`;
-        container.style.display = 'grid';
+        projectContainer.innerHTML = '<p style="text-align:center; color:#888; padding:40px 0; grid-column:1/-1;">No projects added yet. Check back soon!</p>';
+        projectContainer.style.display = 'grid';
         return;
       }
 
-      container.innerHTML = '';
+      projectContainer.innerHTML = '';
       projects.forEach((project, i) => {
-        container.appendChild(buildCard(project, i));
+        projectContainer.appendChild(buildCard(project, i));
       });
+      projectContainer.style.display = 'grid';
 
-      container.style.display = 'grid';
-
-      // Trigger stagger after paint
-      requestAnimationFrame(() => requestAnimationFrame(animateCards));
-
-    } catch (error) {
-      console.error('Failed to load projects:', error);
-
-      if (loadingElement) loadingElement.style.display = 'none';
-
-      if (errorElement) {
-        errorElement.style.display = 'flex';
-        const p = errorElement.querySelector('p');
-        if (p) p.textContent = 'Could not load projects. Please refresh the page.';
-      } else {
-        container.innerHTML = `
-          <p style="grid-column:1/-1; color:#f87171; text-align:center; padding:4rem 1rem;">
-            Error loading projects. Please refresh the page.
-          </p>`;
-        container.style.display = 'grid';
-      }
+    } catch (err) {
+      console.error('Could not load projects:', err);
+      projectLoading.style.display = 'none';
+      projectError.style.display   = 'block';
     }
   }
 
   loadProjects();
-});
+
+}); // end DOMContentLoaded
