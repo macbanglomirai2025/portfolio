@@ -4,7 +4,7 @@
     "description": "Real-time weather fetch using WeatherAPI – shows temperature, feels like, humidity, wind, and icon.",
     "image": "images/weather.png",
     "live": "projects/weather-app/index.html",
-    "github": "https://github.com/macbanglomirai2025/portfolio/tree/main/projects/weather-app",
+    "github": "https://github.com/akelecoder/portfolio/tree/main/projects/weather-app",
     "tech": ["JavaScript", "Fetch API", "Async/Await", "Responsive"]
   },
   {
@@ -12,7 +12,7 @@
     "description": "Classic two-player game with win detection, draw check, restart button, and turn indicator.",
     "image": "images/tic.png",
     "live": "projects/tic-tac-toe/index.html",
-    "github": "https://github.com/macbanglomirai2025/portfolio/tree/main/projects/tic-tac-toe",
+    "github": "https://github.com/akelecoder/portfolio/tree/main/projects/tic-tac-toe",
     "tech": ["JavaScript", "DOM Manipulation", "Game Logic", "Grid CSS"]
   },
   {
@@ -20,7 +20,7 @@
     "description": "Persistent task manager with add, delete, complete toggle, and localStorage saving.",
     "image": "images/todo.png",
     "live": "projects/todo-app/index.html",
-    "github": "https://github.com/macbanglomirai2025/portfolio/tree/main/projects/todo-app",
+    "github": "https://github.com/akelecoder/portfolio/tree/main/projects/todo-app",
     "tech": ["JavaScript", "LocalStorage", "Event Delegation", "Dynamic UI"]
   }
 ]
